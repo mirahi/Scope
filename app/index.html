@@ -12,9 +12,9 @@
 	<!-- endbower -->
 	<!-- endbuild -->
 	<!-- build:css(.tmp) styles/main.css -->
-	<link rel="stylesheet" href="styles/main.scsscss">
+
 	<link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/lightbox.css">
+	<!--	<link rel="stylesheet" href="styles/lightbox.css">-->
 	<!-- endbuild -->
 </head>
 
@@ -56,15 +56,18 @@
 	</div>
 
 	<div class="container">
-		<div class="row">
-			<div class="col-md-4">
 
-				<!-- Show image thumb -->
-				<p ng-repeat="file in files">
-					<img ngf-thumbnail="response[0]" class="mgStyle" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+		<div class="row">
+			<div class="col-md-12">
+				<p ng-repeat="file in files" style="width:33%; float: left;">
+
+					<!-- Show image thumb -->
+
+					<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
 				</p>
 			</div>
 		</div>
+
 
 	</div>
 
@@ -110,7 +113,7 @@
 	<script src="scripts/controllers/main.js"></script>
 	<script src="ajaxService.js"></script>
 	<script src="ajaxController.js"></script>
-	<script src="lightbox.js"></script>
+	<!--	<script src="lightbox.js"></script>-->
 	<!-- endbuild -->
 </body>
 
