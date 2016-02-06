@@ -18,9 +18,35 @@
 	<!-- endbuild -->
 </head>
 
+
 <body class="list-group" ng-controller="AjaxCtrl">
+
+
+
+
+
 	<div class="jumbotron">
-		<h1> Scope </h1>
+		<p><img src='styles/upload.png' id='upload_button' </p>
+			<p><img src='styles/search.png' id='search_button' </p>
+				<div>
+					<input id="modal-close-button" type="button" value="X" />
+				</div>
+				<div class="upload_container">
+					<form id="fileForm" action="http://util.mw.metropolia.fi/ImageRekt/api/v2/upload" method="post" enctype="multipart/form-data">
+						<input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
+			</p>
+			<p style="font-size: 15px;">Title:
+				<input name="title" type="text">
+			</p>
+			<p style="font-size: 15px;">Description:
+				<input name="description" type="text">
+				<p style="font-size: 15px;">Type:
+					<input name="type" type="text">
+					<button ng-click="sendImage()">Upload</button>
+					</form>
+					</div>
+					<input type="text" class="search" ng-model="search.$">
+					<h1> Scope </h1>
 	</div>
 	<!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -40,6 +66,7 @@
 					</button>
 
 					<a class="navbar-brand" href="#/">scope</a>
+
 				</div>
 
 				<div class="collapse navbar-collapse" id="js-navbar-collapse">
@@ -55,18 +82,57 @@
 		</div>
 	</div>
 
-	<div class="container">
+
+	<div class="container_images">
 
 		<div class="row">
 			<div class="col-md-12">
-				<p ng-repeat="file in files" style="width:33%; float: left;">
+				<p ng-repeat="file in files | filter: search" style="width:33%; float: left;" ng-if="$index < 6">
 
 					<!-- Show image thumb -->
 
 					<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+					<td>{{file.title}}</td>
 				</p>
 			</div>
 		</div>
+
+	</div>
+	<div class="buttonHolder">
+		<input class="show-more-button" type="button" value="Show more" />
+	</div>
+	<div class="load-more-container">
+		<div class="row">
+			<div class="col-md-12">
+				<p class="loading_more" ng-repeat="file in files | filter: search" style="width:33%; float: left; display:none;" ng-if="$index < 60">
+
+					<!-- Show image thumb -->
+
+					<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+					<td>{{file.title}}</td>
+				</p>
+			</div>
+		</div>
+
+
+	</div>
+	<!--
+	
+	<div class="container_video">
+
+		<div class="row">
+			<div class="col-md-12">
+				<p ng-repeat="file in files" style="width:33%; float: left;" ng-if="$index < 6">
+
+				
+					<video ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+					</video>
+				</p>
+			</div>
+		</div>
+
+	</div>
+-->
 
 
 	</div>
@@ -75,7 +141,7 @@
 	</div>
 
 	<div class="footer">
-		<div class="container">
+		<div class="container2">
 			<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
 		</div>
 	</div>
@@ -110,11 +176,16 @@
 
 	<!-- build:js({.tmp,app}) scripts/scripts.js -->
 	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/main.js"></script>
 	<script src="ajaxService.js"></script>
 	<script src="ajaxController.js"></script>
-	<!--	<script src="lightbox.js"></script>-->
+	<script src="UploadController.js"></script>
+	<script src="main.js"></script>
 	<!-- endbuild -->
+
+	<!-- directives -->
+	<script src="scripts/directives/fileForm.js"></script>
+	<script src="scripts/directives/registerForm.js"></script>
+
 </body>
 
 </html>
