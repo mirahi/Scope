@@ -14,6 +14,9 @@
 	<!-- build:css(.tmp) styles/main.css -->
 
 	<link rel="stylesheet" href="styles/main.css">
+	<link rel="stylesheet" href="styles/partials/_colors.scss">
+	<link rel="stylesheet" href="styles/partials/_mixins.scss">
+	<link rel="stylesheet" href="styles/partials/_typography.scss">
 	<!--	<link rel="stylesheet" href="styles/lightbox.css">-->
 	<!-- endbuild -->
 </head>
@@ -31,22 +34,26 @@
 				<div>
 					<input id="modal-close-button" type="button" value="X" />
 				</div>
-				<div class="upload_container">
+				<div id="upload_container" class="span8 control-group">
 					<form id="fileForm" action="http://util.mw.metropolia.fi/ImageRekt/api/v2/upload" method="post" enctype="multipart/form-data">
-						<input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)">
+						<input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)" style="display: inline-block;">
 			</p>
-			<p style="font-size: 15px;">Title:
+			<p>
+				<label>Title:</label>
 				<input name="title" type="text">
 			</p>
-			<p style="font-size: 15px;">Description:
+			<p>
+				<label>Description:</label>
 				<input name="description" type="text">
-				<p style="font-size: 15px;">Type:
+				<p>
+					<label>Type:</label>
 					<input name="type" type="text">
-					<button ng-click="sendImage()">Upload</button>
-					</form>
-					</div>
-					<input type="text" class="search" ng-model="search.$">
-					<h1> Scope </h1>
+					<p>
+						<button class="submit_upload" ng-click="sendImage()">Upload</button>
+						</form>
+						</div>
+						<input type="text" class="search" ng-model="search.$">
+						<h1> Scope </h1>
 	</div>
 	<!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
@@ -82,41 +89,43 @@
 		</div>
 	</div>
 
+	<h2 class="title_newest">newest</h2>
+	<hr width="75%">
+	<div class="container_media">
+		<div class="container_images">
 
-	<div class="container_images">
+			<div class="row">
+				<div class="col-md-12">
+					<p ng-repeat="file in files | filter: search" style="width:33%; float: left;" ng-if="$index < 6">
 
-		<div class="row">
-			<div class="col-md-12">
-				<p ng-repeat="file in files | filter: search" style="width:33%; float: left;" ng-if="$index < 6">
+						<!-- Show image thumb -->
 
-					<!-- Show image thumb -->
-
-					<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-					<td>{{file.title}}</td>
-				</p>
+						<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+						<td>{{file.title}}</td>
+					</p>
+				</div>
 			</div>
+
 		</div>
+		<div class="buttonHolder">
+			<input class="btn" id="show-more-button" type="button" value="Show more" />
+		</div>
+		<div class="load-more-container">
+			<div class="row">
+				<div class="col-md-12">
+					<p class="loading_more" ng-repeat="file in files | filter: search" style="width:33%; float: left; display:none;" ng-if="$index < 60">
 
-	</div>
-	<div class="buttonHolder">
-		<input class="show-more-button" type="button" value="Show more" />
-	</div>
-	<div class="load-more-container">
-		<div class="row">
-			<div class="col-md-12">
-				<p class="loading_more" ng-repeat="file in files | filter: search" style="width:33%; float: left; display:none;" ng-if="$index < 60">
+						<!-- Show image thumb -->
 
-					<!-- Show image thumb -->
-
-					<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-					<td>{{file.title}}</td>
-				</p>
+						<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
+						<td>{{file.title}}</td>
+					</p>
+				</div>
 			</div>
+
+
 		</div>
-
-
-	</div>
-	<!--
+		<!--
 	
 	<div class="container_video">
 
@@ -133,7 +142,7 @@
 
 	</div>
 -->
-
+	</div>
 
 	</div>
 

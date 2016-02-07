@@ -25,16 +25,16 @@ body {
 	position: absolute;
 	top: 5px;
 	right: 10px;
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 }
 
 #search_button {
 	position: absolute;
 	top: 5px;
 	right: 70px;
-	height: 30px;
-	width: 30px;
+	height: 40px;
+	width: 40px;
 }
 
 #modal-close-button {
@@ -46,18 +46,20 @@ body {
 	height: 25px;
 }
 
-//#fileForm {
-//	border-radius: 15px;
-//	border: 1px solid black;
-//	position: fixed;
-//	color: black;
-//	height: 150px;
-//	width: auto;
-//	margin: auto;
-//	border: 1px solid #e1e1e1;
-//	position: relative;
-//}
-.upload_container {
+label {
+	font-size: 15px;
+	display: inline-block;
+	float: left;
+	clear: left;
+	width: 250px;
+	text-align: right;
+}
+
+.submit_upload {
+	display: inline-block;
+}
+
+#upload_container {
 	margin: auto;
 	padding: 10px;
 	background-color: aliceblue;
@@ -71,21 +73,13 @@ body {
 	display: none;
 }
 
-.show-more-button {
-	width: 100px;
-	height: 25px;
-	line-height: 22px;
-	background-color: #6989CC;
-	color: #ffffff;
-	font-size: 14px;
-	text-align: center;
-	cursor: pointer;
-	border: 1px solid #fff;
-	text-align: center;
+.title_newest {
+	text-align: center
 }
 
-p {
-	font-size: 7px;
+.container_media {
+	margin: 50px 80px 0px 80px;
+	
 }
 
 
@@ -132,7 +126,7 @@ p {
 .jumbotron {
 	text-align: center;
 	border-bottom: 1px solid #e5e5e5;
-	min-height: 200px;
+	min-height: 300px;
 	background-image: url(back.jpg);
 	background-size: cover;
 	background-position: fixed;

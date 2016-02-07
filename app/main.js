@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
 
-	$(".show-more-button").click(function (e) {
+	$("#show-more-button").click(function (e) {
 		e.preventDefault();
-		$('.show-more-button').hide();
+		$('#show-more-button').hide();
 		$('.loading_more').show();
 		console.log("testing");
 
@@ -11,7 +11,7 @@ $(document).ready(function () {
 
 	$("#upload_button").click(function (e) {
 		console.log("click");
-		$('.upload_container').show();
+		$('#upload_container').show();
 		$('#modal-close-button').show();
 		$('#upload_button').hide();
 		$('#search_button').hide();
@@ -27,7 +27,7 @@ $(document).ready(function () {
 	});
 	$("#modal-close-button").click(function (e) {
 		console.log('$("#modal-close-button").click');
-		$('.upload_container').hide();
+		$('#upload_container').hide();
 		$('#modal-close-button').hide();
 		$('#upload_button').show();
 		$('#search_button').show();
