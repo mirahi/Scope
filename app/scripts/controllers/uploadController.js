@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
 	.controller('UploadController', function ($scope, AjaxFactory) {
 		$scope.setMediaFile = function (element) {
@@ -6,6 +8,7 @@ angular.module('scopeApp')
 		};
 
 		$scope.sendImage = function () {
+			console.log($scope.mimeType);
 			var fd = new FormData(document.getElementById('fileForm'));
 			fd.append('user', 6);
 			fd.append('type', $scope.type);
