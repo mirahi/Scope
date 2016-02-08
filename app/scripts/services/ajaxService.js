@@ -1,4 +1,3 @@
-'use strict';
 angular.module('scopeApp')
 	.factory('ajaxService', function ($http) {
 		return $http.get('http://util.mw.metropolia.fi/ImageRekt/api/v2/files/')

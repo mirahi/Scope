@@ -9,6 +9,7 @@ $(document).ready(function () {
 
 	});
 
+
 	$("#upload_button").click(function (e) {
 		console.log("click");
 		$('#upload_container').show();
@@ -17,6 +18,7 @@ $(document).ready(function () {
 		$('#search_button').hide();
 
 	});
+
 
 
 
@@ -33,5 +35,13 @@ $(document).ready(function () {
 		$('#modal-close-button').hide();
 		$('#upload_button').show();
 		$('#search_button').show();
+	});
+
+	$(".submit_upload").click(function (e) {
+		$('#upload_container').hide();
+		$('#modal-close-button').hide();
+		$('#upload_button').show();
+		$('#search_button').show();
+
 	});
 });

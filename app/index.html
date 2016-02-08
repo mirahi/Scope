@@ -94,13 +94,24 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<p ng-repeat="file in files | filter: search" style="width:33%; float: left;" ng-if="$index < 6">
+					<div class="thumbnail" ng-repeat="file in files">
+						<div ng-if="file.type =='image'">
+							<!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
 
-						<!-- Show image thumb -->
-
-						<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-						<td>{{file.title}}</td>
-					</p>
+							<div class="img" ng-attr-style="background-image: url('http://util.mw.metropolia.fi/uploads/{{ file.path }}');"></div>
+							<div class="caption">
+								<h3>{{ file.title }}</h3>
+							</div>
+						</div>
+						<div ng-if="file.type == 'audio'">
+							<audio controls ng-src="{{videoUrl}}" controls class="img" type="audio/mp4">
+							</audio>
+						</div>
+						<div ng-if="file.type == 'video'">
+							<video controls ng-src="{{videoUrl}}" control class="img" type="video/mp4">
+							</video>
+						</div>
+					</div>
 				</div>
 			</div>
 
@@ -185,14 +196,17 @@
 	<script src="scripts/app.js"></script>
 	<script src="scripts/controllers/ajaxController.js"></script>
 	<script src="scripts/controllers/uploadController.js"></script>
+	<script src="scripts/controllers/userFilesController.js"></script>
 	<script src="main.js"></script>
 	<!-- endbuild -->
 
 	<!-- directives -->
 	<script src="scripts/directives/fileForm.js"></script>
+	<script src="scripts/directives/showFiles.js"></script>
 
 	<!--services-->
 	<script src="scripts/services/ajaxFactory.js"></script>
+	<script src="scripts/services/mediaService.js"></script>
 	<script src="scripts/services/ajaxService.js"></script>
 
 </body>
