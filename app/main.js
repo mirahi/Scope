@@ -3,7 +3,7 @@ $(document).ready(function () {
 
 	$("#show-more-button").click(function (e) {
 		e.preventDefault();
-		$('#contoshow-more-button').hide();
+		$('#show-more-button').hide();
 		$('.loading_more').show();
 		console.log("testing");
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
 		$('#search_button').hide();
 
 	});
-	
+
 
 
 	$("#search_button").click(function (e) {
