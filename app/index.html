@@ -94,7 +94,7 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="thumbnail" ng-repeat="file in files">
+					<div class="thumbnail" ng-repeat="file in files" ng-if="$index < 6">
 						<div ng-if="file.type =='image'">
 							<!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
 
@@ -119,12 +119,13 @@
 		<div class="buttonHolder">
 			<input class="btn" id="show-more-button" type="button" value="Show more" />
 		</div>
+		<!--
 		<div class="load-more-container">
 			<div class="row">
 				<div class="col-md-12">
 					<p class="loading_more" ng-repeat="file in files | filter: search" style="width:33%; float: left; display:none;" ng-if="$index < 60">
 
-						<!-- Show image thumb -->
+						 Show image thumb 
 
 						<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
 						<td>{{file.title}}</td>
@@ -134,6 +135,7 @@
 
 
 		</div>
+-->
 		<!--
 	
 	<div class="container_video">
