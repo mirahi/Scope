@@ -1,5 +1,5 @@
 angular
-	.module('scopeApp', [
+    .module('scopeApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',

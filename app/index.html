@@ -87,39 +87,72 @@
 		</div>
 	</div>
 
-	<h2 class="title_newest">some title</h2>
+	<h2 class="title-image-files">Latest images</h2>
 	<hr width="75%">
 	<div class="container_media">
-		<div class="container_images">
 
+
+		<div class="container-img">images
 			<div class="row">
 				<div class="col-md-12">
-					<div class="thumbnail" ng-repeat="file in files" ng-if="$index < 22">
-						<div ng-if="file.type =='image'">
 
-							<div class="img" ng-attr-style="background-image: url('http://util.mw.metropolia.fi/uploads/{{ file.path }}');"></div>
+					<div class="thumbnail" ng-repeat="file in files" ng-if="file.type =='image'">
+
+
+						<a ng-href="{{ file.path | trustUrl }}">
+							<div class="img" ng-attr-style="background-image: url('{{ file.path | trustUrl }}');"></div>
 							<div class="caption">
 								<h3>{{ file.title }}</h3>
 							</div>
-						</div>
-						<div ng-if="file.type == 'audio'">
-							<audio controls>
-								<source src={{videoUrl}}>
-							</audio>
-						</div>
-						<div ng-if="file.type == 'video'">
-							<video controls>
-								<source src={{videoUrl}}>
-							</video>
-						</div>
+						</a>
+
 					</div>
 				</div>
 			</div>
+		</div>
 
+		<h2 class="title-audio-files">Latest audios </h2>
+		<hr width="75%">
+		<div class="container-audio">audio
+			<div class="row">
+				<div class="col-md-12">
+
+					<div class="thumbnail" ng-repeat="file in files" ng-if="file.type == 'audio'">
+
+						<a ng-href="{{ file.path | trustUrl }}">
+
+							<audio ng-src="{{ file.path | trustUrl }}" audioplayer controls class="img">
+
+							</audio>
+						</a>
+					</div>
+
+				</div>
+
+			</div>
 		</div>
-		<div class="buttonHolder">
-			<input class="btn" id="show-more-button" type="button" value="Show more" />
+		<h2 class="title-video-files">Latest videos </h2>
+		<hr width="75%">
+		<div class="container-video">video
+			<div class="row">
+				<div class="col-md-12">
+					<div class="thumbnail" ng-repeat="file in files" ng-if="file.type == 'video'">
+
+
+						<a ng-href="{{ file.path | trustUrl }}">
+							<video controls="controls" ng-src="{{ file.path | trustUrl }}" class="img">
+							</video>
+					</div>
+					</a>
+
+				</div>
+			</div>
 		</div>
+	</div>
+	</div>
+
+	</div>
+
 
 	</div>
 
@@ -143,7 +176,6 @@
 				}, A[l].l = +new Date, a = n.createElement(g),
 				r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
 		}(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
-
 		ga('create', 'UA-XXXXX-X');
 		ga('send', 'pageview');
 	</script>
@@ -178,6 +210,9 @@
 	<script src="scripts/services/ajaxFactory.js"></script>
 	<script src="scripts/services/mediaService.js"></script>
 	<script src="scripts/services/ajaxService.js"></script>
+
+	<!--filters-->
+	<script src="scripts/filters/urlFilter.js"></script>
 
 </body>
 
