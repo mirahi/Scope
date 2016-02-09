@@ -8,8 +8,10 @@ angular.module('scopeApp')
 		};
 
 		function videoURL($scope, $sce) {
+            console.log("jojoo")
 			var videoUrl = 'http://util.mw.metropolia.fi/uploads/{{ file.path }}';
 			$scope.videoUrl = $sce.trustAsResourceUrl(videoUrl);
+            console.log($scope.videoUrl);
 		}
 
 		$scope.$on('mediaevent', function (evt) {

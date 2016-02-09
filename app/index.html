@@ -2,23 +2,23 @@
 <html lang="en" ng-app="scopeApp">
 
 <head>
-	<meta charset="utf-8">
-	<title></title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width">
-	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	<!-- build:css(.) styles/vendor.css -->
-	<!-- bower:css -->
-	<!-- endbower -->
-	<!-- endbuild -->
-	<!-- build:css(.tmp) styles/main.css -->
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
 
-	<link rel="stylesheet" href="styles/main.css">
-	<link rel="stylesheet" href="styles/partials/_colors.scss">
-	<link rel="stylesheet" href="styles/partials/_mixins.scss">
-	<link rel="stylesheet" href="styles/partials/_typography.scss">
-	<!--	<link rel="stylesheet" href="styles/lightbox.css">-->
-	<!-- endbuild -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/partials/_colors.scss">
+    <link rel="stylesheet" href="styles/partials/_mixins.scss">
+    <link rel="stylesheet" href="styles/partials/_typography.scss">
+    <!--	<link rel="stylesheet" href="styles/lightbox.css">-->
+    <!-- endbuild -->
 </head>
 
 
@@ -28,98 +28,105 @@
 
 
 
-	<div class="jumbotron">
-		<p><img src='styles/upload.png' id='upload_button' </p>
-			<p><img src='styles/search.png' id='search_button' </p>
-				<div>
-					<input id="modal-close-button" type="button" value="X" />
-				</div>
-				<div id="upload_container" class="span8 control-group" ng-controller="UploadController">
-					<form id="fileForm">
-						<input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)" style="display: inline-block;">
-			</p>
-			<p>
-				<label>Title:</label>
-				<input name="title" type="text">
-			</p>
-			<p>
-				<label>Description:</label>
-				<input name="description" type="text">
-				<p>
+    <div class="jumbotron">
+        <p><img src='styles/upload.png' id='upload_button' </p>
+            <p><img src='styles/search.png' id='search_button' </p>
+                <div>
+                    <input id="modal-close-button" type="button" value="X" />
+                </div>
+                <div id="upload_container" class="span8 control-group" ng-controller="UploadController">
+                    <form id="fileForm">
+                        <input name="file" type="file" onchange="angular.element(this).scope().setMediaFile(this)" style="display: inline-block;">
+            </p>
+            <p>
+                <label>Title:</label>
+                <input name="title" type="text">
+            </p>
+            <p>
+                <label>Description:</label>
+                <input name="description" type="text">
+                <p>
 
-					<button class="submit_upload" ng-click="sendImage()">Upload</button>
-					</form>
-					</div>
-					<input type="text" class="search" ng-model="search.$">
-					<h1> Scope </h1>
-	</div>
-	<!--[if lte IE 8]>
+                    <button class="submit_upload" ng-click="sendImage()">Upload</button>
+                    </form>
+                    </div>
+                    <input type="text" class="search" ng-model="search.$">
+                    <h1> Scope </h1>
+    </div>
+    <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-	<!-- Add your site or application content here -->
-	<div class="header">
-		<div class="navbar navbar-default" role="navigation">
-			<div class="container">
-				<div class="navbar-header">
+    <!-- Add your site or application content here -->
+    <div class="header">
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
 
-					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
 
-					<a class="navbar-brand" href="#/">scope</a>
+                    <a class="navbar-brand" href="#/">scope</a>
 
-				</div>
+                </div>
 
-				<div class="collapse navbar-collapse" id="js-navbar-collapse">
+                <div class="collapse navbar-collapse" id="js-navbar-collapse">
 
-					<ul class="nav navbar-nav">
-						<li class="active"><a href="#/">Home</a></li>
-						<li><a ng-href="#/images">Images</a></li>
-						<li><a ng-href="#/videos">Videos</a></li>
-						<li><a ng-href="#/audios">Audios</a></li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a href="#/">Home</a></li>
+                        <li><a ng-href="#/images">Images</a></li>
+                        <li><a ng-href="#/videos">Videos</a></li>
+                        <li><a ng-href="#/audios">Audios</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
-	<h2 class="title_newest">some title</h2>
-	<hr width="75%">
-	<div class="container_media">
-		<div class="container_images">
+    <h2 class="title_newest">some title</h2>
+    <hr width="75%">
+    <div class="container_media">
+        <div class="container_images">
 
-			<div class="row">
-				<div class="col-md-12">
-					<div class="thumbnail" ng-repeat="file in files" ng-if="$index < 6">
-						<div ng-if="file.type =='image'">
-							<!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="thumbnail" ng-repeat="file in files" ng-if="$index < 20">
+                        <div ng-if="file.type =='image'">
+                            <!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
 
-							<div class="img" ng-attr-style="background-image: url('http://util.mw.metropolia.fi/uploads/{{ file.path }}');"></div>
-							<div class="caption">
-								<h3>{{ file.title }}</h3>
-							</div>
-						</div>
-						<div ng-if="file.type == 'audio'">
-							<audio controls ng-src="{{videoUrl}}" controls class="img" type="audio/mp4">
-							</audio>
-						</div>
-						<div ng-if="file.type == 'video'">
-							<video controls ng-src="{{videoUrl}}" control class="img" type="video/mp4">
-							</video>
-						</div>
-					</div>
-				</div>
-			</div>
+                            <a ng-href="{{ file.path | trustUrl }}">
+                                <div class="img" ng-attr-style="background-image: url('{{ file.path | trustUrl }}');"></div>
+                                <div class="caption">
+                                    <h3>{{ file.title }}</h3>
+                                </div>
+                            </a>
+                        </div>
+                        <a ng-href="{{ file.path | trustUrl }}">
+                            <div ng-if="file.type == 'audio'">
+                                <audio ng-src="{{ file.path | trustUrl }}" audioplayer controls>
+                                </audio>
+                            </div>
+                        </a>
+                        <a ng-href="{{ file.path | trustUrl }}">
+                            <div ng-if="file.type == 'video'">
 
-		</div>
-		<div class="buttonHolder">
-			<input class="btn" id="show-more-button" type="button" value="Show more" />
-		</div>
-		<!--
+                                <video controls="controls" ng-src="{{ file.path | trustUrl }}" class="img">
+                                </video>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="buttonHolder">
+            <input class="btn" id="show-more-button" type="button" value="Show more" />
+        </div>
+        <!--
 		<div class="load-more-container">
 			<div class="row">
 				<div class="col-md-12">
@@ -136,7 +143,7 @@
 
 		</div>
 -->
-		<!--
+        <!--
 	
 	<div class="container_video">
 
@@ -153,63 +160,66 @@
 
 	</div>
 -->
-	</div>
+    </div>
 
-	</div>
+    </div>
 
-	</div>
-	</div>
+    </div>
+    </div>
 
-	<div class="footer">
-		<div class="container2">
-			<p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-		</div>
-	</div>
+    <div class="footer">
+        <div class="container2">
+            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+        </div>
+    </div>
 
 
-	<!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-	<script>
-		! function (A, n, g, u, l, a, r) {
-			A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
-					(A[l].q = A[l].q || []).push(arguments)
-				}, A[l].l = +new Date, a = n.createElement(g),
-				r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
-		}(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
+    <script>
+        ! function (A, n, g, u, l, a, r) {
+            A.GoogleAnalyticsObject = l, A[l] = A[l] || function () {
+                    (A[l].q = A[l].q || []).push(arguments)
+                }, A[l].l = +new Date, a = n.createElement(g),
+                r = n.getElementsByTagName(g)[0], a.src = u, r.parentNode.insertBefore(a, r)
+        }(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
 
-		ga('create', 'UA-XXXXX-X');
-		ga('send', 'pageview');
-	</script>
+        ga('create', 'UA-XXXXX-X');
+        ga('send', 'pageview');
+    </script>
 
-	<!-- build:js(.) scripts/vendor.js -->
-	<!-- bower:js -->
-	<script src="bower_components/jquery/dist/jquery.js"></script>
-	<script src="bower_components/angular/angular.js"></script>
-	<script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-	<script src="bower_components/angular-animate/angular-animate.js"></script>
-	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
-	<script src="bower_components/angular-resource/angular-resource.js"></script>
-	<script src="bower_components/angular-route/angular-route.js"></script>
-	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-	<script src="bower_components/angular-touch/angular-touch.js"></script>
-	<!-- endbower -->
-	<!-- endbuild -->
+    <!-- build:js(.) scripts/vendor.js -->
+    <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <!-- endbower -->
+    <!-- endbuild -->
 
-	<!-- build:js({.tmp,app}) scripts/scripts.js -->
-	<script src="scripts/app.js"></script>
-	<script src="scripts/controllers/ajaxController.js"></script>
-	<script src="scripts/controllers/uploadController.js"></script>
-	<script src="scripts/controllers/userFilesController.js"></script>
-	<script src="main.js"></script>
-	<!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/ajaxController.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/controllers/userFilesController.js"></script>
+    <script src="main.js"></script>
+    <!-- endbuild -->
 
-	<!-- directives -->
-	<script src="scripts/directives/fileForm.js"></script>
-	<script src="scripts/directives/showFiles.js"></script>
+    <!-- directives -->
+    <script src="scripts/directives/fileForm.js"></script>
+    <script src="scripts/directives/showFiles.js"></script>
 
-	<!--services-->
-	<script src="scripts/services/ajaxFactory.js"></script>
-	<script src="scripts/services/mediaService.js"></script>
-	<script src="scripts/services/ajaxService.js"></script>
+    <!--services-->
+    <script src="scripts/services/ajaxFactory.js"></script>
+    <script src="scripts/services/mediaService.js"></script>
+    <script src="scripts/services/ajaxService.js"></script>
+
+    <!--filters-->
+    <script src="scripts/filters/urlFilter.js"></script>
 
 </body>
 
