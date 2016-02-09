@@ -94,9 +94,8 @@
 
 			<div class="row">
 				<div class="col-md-12">
-					<div class="thumbnail" ng-repeat="file in files" ng-if="$index < 6">
+					<div class="thumbnail" ng-repeat="file in files" ng-if="$index < 22">
 						<div ng-if="file.type =='image'">
-							<!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
 
 							<div class="img" ng-attr-style="background-image: url('http://util.mw.metropolia.fi/uploads/{{ file.path }}');"></div>
 							<div class="caption">
@@ -104,11 +103,13 @@
 							</div>
 						</div>
 						<div ng-if="file.type == 'audio'">
-							<audio controls ng-src="{{videoUrl}}" controls class="img" type="audio/mp4">
+							<audio controls>
+								<source src={{videoUrl}}>
 							</audio>
 						</div>
 						<div ng-if="file.type == 'video'">
-							<video controls ng-src="{{videoUrl}}" control class="img" type="video/mp4">
+							<video controls>
+								<source src={{videoUrl}}>
 							</video>
 						</div>
 					</div>
@@ -119,40 +120,7 @@
 		<div class="buttonHolder">
 			<input class="btn" id="show-more-button" type="button" value="Show more" />
 		</div>
-		<!--
-		<div class="load-more-container">
-			<div class="row">
-				<div class="col-md-12">
-					<p class="loading_more" ng-repeat="file in files | filter: search" style="width:33%; float: left; display:none;" ng-if="$index < 60">
 
-						 Show image thumb 
-
-						<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-						<td>{{file.title}}</td>
-					</p>
-				</div>
-			</div>
-
-
-		</div>
--->
-		<!--
-	
-	<div class="container_video">
-
-		<div class="row">
-			<div class="col-md-12">
-				<p ng-repeat="file in files" style="width:33%; float: left;" ng-if="$index < 6">
-
-				
-					<video ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">
-					</video>
-				</p>
-			</div>
-		</div>
-
-	</div>
--->
 	</div>
 
 	</div>
