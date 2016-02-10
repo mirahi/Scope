@@ -1,29 +1,20 @@
-'use strict';
 
 angular.module('scopeApp')
-	.controller('UserFilesController', function ($scope, $sce, AjaxFactory, MediaService) {
+    .controller('UserFilesController', function ($scope, $sce, AjaxFactory, MediaService) {
+        console.log(MediaService.userData);
 
-		$scope.trustSrc = function (src) {
-			return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
-		};
+        $scope.trustSrc = function (src) {
+            return $sce.trustAsResourceUrl(MediaService.mediaUrl + src);
+        };
 
-		function videoURL($scope, $sce) {
-            console.log("jojoo")
-			var videoUrl = 'http://util.mw.metropolia.fi/uploads/{{ file.path }}';
-			$scope.videoUrl = $sce.trustAsResourceUrl(videoUrl);
-            console.log($scope.videoUrl);
-		}
+        var user = MediaService.userData;
 
-		$scope.$on('mediaevent', function (evt) {
-			console.log(evt);
-			var user = MediaService.userData;
+        var request = AjaxFactory.fileByUser(user.userId);
 
-			var request = AjaxFactory.fileByUser(user.userId);
-
-			request.then(function (response) {
-				$scope.files = response.data;
-			}, function (error) {
-				console.log(error.data);
-			});
-		});
-	});
+        request.then(function (response) {
+            console.log(response);
+            $scope.files = response.data;
+        }, function (error) {
+            console.log(error.data);
+        });
+    });

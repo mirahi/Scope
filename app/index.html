@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" ng-app="scopeApp">
+<html lang="en" ng-app="scopeApp" ng-controller="AjaxCtrl">
 
 <head>
     <meta charset="utf-8">
@@ -22,7 +22,7 @@
 </head>
 
 
-<body class="list-group" ng-controller="AjaxCtrl">
+<body class="list-group">
 
 
 
@@ -94,30 +94,32 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <div class="thumbnail" ng-repeat="file in files" ng-if="$index < 20">
-                        <div ng-if="file.type =='image'">
-                            <!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
+                    <div infinite-scroll="getMoreData()">
+                        <div class="thumbnail" ng-repeat="file in files" ng-if="$index < 9">
+                            <div ng-if="file.type =='image'">
+                                <!--							<img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path }}">-->
 
+                                <a ng-href="{{ file.path | trustUrl }}">
+                                    <div class="img" ng-attr-style="background-image: url('{{ file.thumbNails.medium | trustUrl }}');"></div>
+                                    <div class="caption">
+                                        <h3>{{ file.title }}</h3>
+                                    </div>
+                                </a>
+                            </div>
                             <a ng-href="{{ file.path | trustUrl }}">
-                                <div class="img" ng-attr-style="background-image: url('{{ file.path | trustUrl }}');"></div>
-                                <div class="caption">
-                                    <h3>{{ file.title }}</h3>
+                                <div ng-if="file.type == 'audio'">
+                                    <audio ng-src="{{ file.path | trustUrl }}" audioplayer controls>
+                                    </audio>
+                                </div>
+                            </a>
+                            <a ng-href="{{ file.path | trustUrl }}">
+                                <div ng-if="file.type == 'video'">
+
+                                    <video controls="controls" ng-src="{{ file.path | trustUrl }}" class="img">
+                                    </video>
                                 </div>
                             </a>
                         </div>
-                        <a ng-href="{{ file.path | trustUrl }}">
-                            <div ng-if="file.type == 'audio'">
-                                <audio ng-src="{{ file.path | trustUrl }}" audioplayer controls>
-                                </audio>
-                            </div>
-                        </a>
-                        <a ng-href="{{ file.path | trustUrl }}">
-                            <div ng-if="file.type == 'video'">
-
-                                <video controls="controls" ng-src="{{ file.path | trustUrl }}" class="img">
-                                </video>
-                            </div>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -169,7 +171,7 @@
 
     <div class="footer">
         <div class="container2">
-            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+            <p><span class="glyphicon glyphicon-heart"></span> $scope</p>
         </div>
     </div>
 
@@ -206,12 +208,16 @@
     <script src="scripts/controllers/ajaxController.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
     <script src="scripts/controllers/userFilesController.js"></script>
+    <script src="scripts/controllers/loginController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
     <script src="main.js"></script>
     <!-- endbuild -->
 
     <!-- directives -->
     <script src="scripts/directives/fileForm.js"></script>
     <script src="scripts/directives/showFiles.js"></script>
+    <script src="scripts/directives/loginForm.js"></script>
+    <script src="scripts/directives/registerForm.js"></script>
 
     <!--services-->
     <script src="scripts/services/ajaxFactory.js"></script>
