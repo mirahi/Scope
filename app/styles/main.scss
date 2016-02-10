@@ -1,12 +1,16 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import 'bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
 // endbower
 
+// Import helpers
 @import 'helpers/colors';
 @import 'helpers/mixins';
 @import 'helpers/typography';
+
+// Import layout styles
 @import 'layout/navigation.scss';
+@import 'layout/slide.scss';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -17,6 +21,14 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  margin-top: 50px;
+}
+
+/** REGISTER PAGE */
+
+body#page-register {
+    background-image: url('../images/dawn-nature-sunset-trees.jpg');
+    background-size: cover;
 }
 
 /* Everything but the jumbotron gets side spacing for mobile first views */

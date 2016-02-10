@@ -17,7 +17,7 @@
     <!-- endbuild -->
 </head>
 
-<body ng-app="scopeApp">
+<body id="page-register" ng-app="scopeApp">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -29,53 +29,30 @@
     <input type="checkbox" id="offcanvas-menu" class="toggle" />
 
     <div class="container-fluid">
-        
+
         <menu-container></menu-container>
 
 
-        <!-- <section class="content"> not sure where so we need this, didn't want to delete it yet -->
 
-            
+        <upload-modal></upload-modal>
 
-            <!-- END OF OFF CANVAS MENU -->
+        <header-nav></header-nav>
+        
+        <div class="container">
+            <br>
+            <br>
+            <h1>Register now.</h1>
+            <h2>It's easy, and always free.</h2>
+        <br>
+        <br>
+        <br>
+        <form-register></form-register>
 
-            <upload-modal></upload-modal>
-            
-            <header-nav></header-nav>
-            
-            <!--
+        <div class="container">
 
-            <div class="header">
-                <div class="navbar navbar-default" role="navigation">
-                    <div class="container">
-                        <div class="navbar-header">
+        <div class="footer">
 
-                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-                                <span class="sr-only">Toggle navigation</span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                                <span class="icon-bar"></span>
-                            </button>
-
-                            <a class="navbar-brand" href="#/">Scope</a>
-                        </div>
-
-                        <div class="collapse navbar-collapse" id="js-navbar-collapse">
-
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#/">Home</a></li>
-                                <li><a ng-href="#/about">About</a></li>
-                                <li><a ng-href="#/">Contact</a></li>
-                            </ul>
-                            <button type="button" class="btn" data-toggle="modal" data-target="#upload-modal">Upload</button>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
-
-            <div class="footer">
-
-            </div>
+        </div>
 
     </div>
 
@@ -99,16 +76,17 @@
     <!-- controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
-    
+    <script src="scripts/controllers/registerController.js"></script>
 
     <!-- services -->
     <script src="scripts/services/ajaxFactory.js"></script>
+    <script src="scripts/services/mediaService.js"></script>
 
     <!-- directives -->
     <script src="scripts/directives/uploadModal.js"></script>
     <script src="scripts/directives/menuContainer.js"></script>
     <script src="scripts/directives/headerNav.js"></script>
-    
+    <script src="scripts/directives/formRegister.js"></script>
 
     <!-- endbuild -->
 </body>
