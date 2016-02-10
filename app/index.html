@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="scopeApp">
 
 <head>
     <meta charset="utf-8">
@@ -22,6 +22,7 @@
 </head>
 
 <body class="list-group" ng-controller="AjaxCtrl">
+ 
 
     <!--    Hambuger menu-->
 
@@ -68,10 +69,14 @@
 
 
 
-            <!--		  Image	-->
+            <!-- Image	-->
 
             <div class="jumbotron">
-                <h1> Scope </h1> </div>
+                <h1> Scope </h1> 
+            <div ng-controller="RegisterController">
+                <register-form></register-form>
+            </div>
+            </div>
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
@@ -90,6 +95,7 @@
 
             </div>
             <!--end content body-->
+           
 
         </section>
         <!--end content-->
@@ -129,13 +135,25 @@
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
+    
 
+    <!-- Include My App's JS file(s)-->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+
+    <script src="scripts/directives/fileForm.js"></script>
+    <script src="scripts/directives/registerForm.js"></script>
+    <!--    Controllers-->
+    
+
+
     <script src="scripts/controllers/main.js"></script>
     <script src="ajaxService.js"></script>
     <script src="ajaxController.js"></script>
-    <!--	<script src="lightbox.js"></script>-->
+    <script src="scripts/controllers/registerController.js"></script>
+        <script src="scripts/services/ajaxFactory.js"></script>
+
+    
     <!-- endbuild -->
 
 </body>
