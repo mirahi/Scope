@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="scopeApp">
 
 <head>
     <meta charset="utf-8">
@@ -17,78 +17,69 @@
     <!-- endbuild -->
 </head>
 
-<body id="page-register" ng-app="scopeApp">
+<body id="page-register">
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-
-    <!-- OFF CANVAS MENU -->
-
     <input type="checkbox" id="offcanvas-menu" class="toggle" />
-
     <div class="container-fluid">
-
+        <!-- Header, menu and upload -->
         <menu-container></menu-container>
-
-
-
         <upload-modal></upload-modal>
-
         <header-nav></header-nav>
-        
+
+        <!-- Site content -->
         <div class="container">
             <br>
             <br>
             <h1>Register now.</h1>
-            <h2>It's easy, and always free.</h2>
-        <br>
-        <br>
-        <br>
-        <form-register></form-register>
+            <h2>It's easy, and it's free.</h2>
+            <br>
+            <br>
+            <br>
+            
+            <form-register></form-register>
 
-        <div class="container">
+            <footer class="footer">
 
-        <div class="footer">
+            </footer>
 
         </div>
 
-    </div>
+        <!-- build:js(.) scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+        <script src="bower_components/angular-animate/angular-animate.js"></script>
+        <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.js"></script>
+        <script src="bower_components/angular-route/angular-route.js"></script>
+        <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+        <script src="bower_components/angular-touch/angular-touch.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
 
-    <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-route/angular-route.js"></script>
-    <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
+        <!-- build:js({.tmp,app}) scripts/scripts.js -->
+        <script src="scripts/app.js"></script>
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.js"></script>
+        <!-- controllers -->
+        <script src="scripts/controllers/main.js"></script>
+        <script src="scripts/controllers/uploadController.js"></script>
+        <script src="scripts/controllers/registerController.js"></script>
 
-    <!-- controllers -->
-    <script src="scripts/controllers/main.js"></script>
-    <script src="scripts/controllers/uploadController.js"></script>
-    <script src="scripts/controllers/registerController.js"></script>
+        <!-- directives -->
+        <script src="scripts/directives/uploadModal.js"></script>
+        <script src="scripts/directives/menuContainer.js"></script>
+        <script src="scripts/directives/headerNav.js"></script>
+        <script src="scripts/directives/formRegister.js"></script>
 
-    <!-- services -->
-    <script src="scripts/services/ajaxFactory.js"></script>
-    <script src="scripts/services/mediaService.js"></script>
+        <!-- services -->
+        <script src="scripts/services/ajaxFactory.js"></script>
+        <script src="scripts/services/mediaService.js"></script>
 
-    <!-- directives -->
-    <script src="scripts/directives/uploadModal.js"></script>
-    <script src="scripts/directives/menuContainer.js"></script>
-    <script src="scripts/directives/headerNav.js"></script>
-    <script src="scripts/directives/formRegister.js"></script>
-
-    <!-- endbuild -->
+        <!-- endbuild -->
 </body>
 
 </html>

@@ -30,7 +30,11 @@ body#page-register {
     background-image: url('../images/dawn-nature-sunset-trees.jpg');
     background-size: cover;
 }
-
+.img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,

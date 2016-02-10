@@ -20,5 +20,21 @@ angular.module('scopeApp')
 			});
 		};
         
+        ajaxFunctions.login = function (args) {
+			return $http.post(baseUrl + 'login', $httpParamSerializer(args), {
+				headers: {
+					'Content-Type': 'application/x-www-form-urlencoded'
+				}
+			});
+		};
+        
+        ajaxFunctions.getFiles = function(args) {
+            return $http.get(baseUrl + 'files/type/' + args);
+        };
+        
+        ajaxFunctions.getAllFiles = function() {
+            return $http.get(baseUrl + 'files/');
+        };
+        
         return ajaxFunctions;
     });
