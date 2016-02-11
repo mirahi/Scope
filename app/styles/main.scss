@@ -1,11 +1,16 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import 'bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
 // endbower
 
-@import 'partials/colors';
-@import 'partials/mixins';
-@import 'partials/typography';
+// Import helpers
+@import 'helpers/colors';
+@import 'helpers/mixins';
+@import 'helpers/typography';
+
+// Import layout styles
+@import 'layout/navigation.scss';
+@import 'layout/slide.scss';
 
 .browsehappy {
   margin: 0.2em 0;
@@ -16,28 +21,26 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 body {
   padding: 0;
+  margin-top: 50px;
 }
 
+/** REGISTER PAGE */
+
+body#page-register {
+    background-image: url('../images/dawn-nature-sunset-trees.jpg');
+    background-size: cover;
+}
+.img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
 .marketing,
 .footer {
   padding-left: 15px;
   padding-right: 15px;
-}
-
-/* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-  margin-bottom: 10px;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
-  }
 }
 
 /* Custom page footer */
@@ -54,20 +57,10 @@ body {
 /* Main marketing message and sign up button */
 .jumbotron {
   text-align: center;
-  border-bottom: 1px solid #e5e5e5;
 
   .btn {
     font-size: 21px;
     padding: 14px 24px;
-  }
-}
-
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-
-  p + h4 {
-    margin-top: 28px;
   }
 }
 
@@ -79,14 +72,9 @@ body {
 
   /* Remove the padding we set earlier */
   .header,
-  .marketing,
   .footer {
     padding-left: 0;
     padding-right: 0;
-  }
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
   }
   /* Remove the bottom border on the jumbotron for visual effect */
   .jumbotron {

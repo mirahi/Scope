@@ -1,6 +1,7 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="en" ng-app="scopeApp">
+
+<head>
     <meta charset="utf-8">
     <title></title>
     <meta name="description" content="">
@@ -12,62 +13,93 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <!-- endbuild -->
-  </head>
-  <body ng-app="scopeApp">
+</head>
+
+<body>
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <!-- Add your site or application content here -->
-    <div class="header">
-      <div class="navbar navbar-default" role="navigation">
-        <div class="container">
-          <div class="navbar-header">
+    <input type="checkbox" id="offcanvas-menu" class="toggle" />
 
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#js-navbar-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
+    <div class="container-fluid">
+        <!-- Header, menu and upload -->
+        <menu-container></menu-container>
+        <upload-modal></upload-modal>
+        <header-nav></header-nav>
 
-            <a class="navbar-brand" href="#/">Scope</a>
-          </div>
+        <!-- Site content -->
+        <main ng-controller="MediaController">
 
-          <div class="collapse navbar-collapse" id="js-navbar-collapse">
+            <h2 class="title-image-files">Latest images</h2>
+            <hr width="75%">
+            <div class="container_media">
 
-            <ul class="nav navbar-nav">
-              <li class="active"><a href="#/">Home</a></li>
-              <li><a ng-href="#/about">About</a></li>
-              <li><a ng-href="#/">Contact</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
+                <div class="container-img">images
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="thumbnail" ng-repeat="image in images">
+
+
+                                <a ng-href="{{ image.path | trustUrl }}">
+                                    <div class="img col-md-3" ng-attr-style="background-image: url('{{ image.path | trustUrl }}');"></div>
+                                    <div class="caption">
+                                        <h3>{{ file.title }}</h3>
+                                    </div>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 class="title-audio-files">Latest audios </h2>
+                <hr width="75%">
+                <div class="container-audio">audio
+                    <div class="row">
+                        <div class="col-md-12">
+
+                            <div class="thumbnail" ng-repeat="audio in audios" >
+
+                                <a ng-href="{{ file.path | trustUrl }}">
+
+                                    <audio ng-src="{{ file.path | trustUrl }}" audioplayer controls class="img">
+
+                                    </audio>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <h2 class="title-video-files">Latest videos </h2>
+                <hr width="75%">
+                <div class="container-video">video
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="thumbnail" ng-repeat="video in videos">
+
+
+                                <a ng-href="{{ file.path | trustUrl }}">
+                                    <video controls="controls" ng-src="{{ file.path | trustUrl }}" class="img">
+                                    </video>
+                            </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+
+    <footer class="footer">
+    </footer>
+
     </div>
-
-    <div class="container">
-    <div ng-view=""></div>
-    </div>
-
-    <div class="footer">
-      <div class="container">
-        <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-      </div>
-    </div>
-
-
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-     <script>
-       !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-       (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-       r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-       }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-       ga('create', 'UA-XXXXX-X');
-       ga('send', 'pageview');
-    </script>
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -83,9 +115,26 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-        <!-- build:js({.tmp,app}) scripts/scripts.js -->
-        <script src="scripts/app.js"></script>
-        <script src="scripts/controllers/main.js"></script>
-        <!-- endbuild -->
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="scripts/app.js"></script>
+
+    <!-- controllers -->
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/controllers/mediaController.js"></script>
+
+    <!-- directives -->
+    <script src="scripts/directives/uploadModal.js"></script>
+    <script src="scripts/directives/menuContainer.js"></script>
+    <script src="scripts/directives/headerNav.js"></script>
+    
+    <!-- filters -->
+    <script src="scripts/filters/urlFilter.js"></script>
+
+    <!-- services -->
+    <script src="scripts/services/ajaxFactory.js"></script>
+
+    <!-- endbuild -->
 </body>
+
 </html>
