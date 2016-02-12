@@ -17,6 +17,7 @@
     <link rel="stylesheet" type="text/css" href="styles/normalize.css" />
     <link rel="stylesheet" type="text/css" href="styles/style.css" />
     <link rel="stylesheet" type="text/css" href="styles/slide.css" />
+    <link rel="stylesheet" type="text/css" href="styles/Comment.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/main.css">
 
@@ -54,7 +55,7 @@
 
         </aside>
         <!--end menu-container-->
-
+</div>
 
         <section class="content">
 
@@ -68,47 +69,93 @@
             </div>
             <!--end menu-->
 
-
-
+ <div class="jumbotron">
+     <h1> Scope </h1></div>
             <!-- Image	-->
-
-            <div class="jumbotron">
-                <h1> Scope </h1>
-                <div ng-controller="RegisterController">
-                    <register-form></register-form>
-                </div>
-                <a href="singlepage.html">Single Page</a>
-            </div>
-            <div class="container">
-                <a href="singlepage.html">Single Page</a>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="img-padding">
-                            <!-- Show imag thumb -->
-                            <p ng-repeat="file in files" class="thumbnail img-padding" style="float: left;">
-
-                                <img class="img-responsive" ng-src="http://util.mw.metropolia.fi/uploads/{{ file.path}}">
-                            </p>
-
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+        <div class="container1">
+  <img class="img1 img-padding" src="http://www.planwallpaper.com/static/images/Winter-Tiger-Wild-Cat-Images.jpg"/>
+</div>
+                
     <!--end content body-->
 
 
     </section>
     <!--end content-->
-    <div class="footer">
-        <div class="container">
-            <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-        </div>
-    </div>
-    <!--/div-->
+    
+    
+<!------------container------->
 
-    </div>
+<div class="container-comment">
+
+<h1>COMMENT BOX</h1>
+<!-------Wrap------------>
+<div id="wrap">
+<div id="main">
+<div class="row">
+<div class="col-md-5">
+<h3 class="heading">Comments and Responses</h3>
+</div>
+<div class="col-md-7">
+<div id="upper_blank"></div>
+</div>
+</div>
+</div>
+
+<p>Your email address will not be published. Required fields are marked *</p>
+
+<!------------Form Start---------->
+
+<div id='form'>
+<div class="row">
+<div class="col-md-12">
+
+<form action="" method="POST" id="commentform">
+
+<div id="comment-name" class="form-row">
+<input type = "text" placeholder = "Name (required)" name = "dname"  id = "name" >
+</div>
+<div id="comment-email" class="form-row">
+<input type = "text" placeholder = "Mail (will not be published) (required)" name = "demail"  id = "email">
+</div>
+<div id="comment-url" class="form-row">
+<input type = "text" placeholder = "Website" name = "url"  id = "url" >
+</div>
+<div id="comment-message" class="form-row">
+<textarea name = "comment" placeholder = "Message" id = "comment" ></textarea>
+</div>
+<a href="#"><input type="submit" name="dsubmit" id="commentSubmit" value="Submit Comment"></a>
+<input style="width: 30px" type="checkbox" value="1" name="subscribe" id="subscribe" checked="checked">
+<p1><b>Notify me when new comments are added.</b></p1>
+</form>
+
+</div>
+</div>
+</div>
+</div>
+
+<!-------------------Reply Section------->
+<div id="second">
+<div class="row">
+<div class="col-md-2">
+<h3 class="second_heading"><b>Leave a Reply</b></h3>
+</div>
+<div class="col-md-10">
+<div class="blank"></div>
+</div>
+</div>
+</div>
+<div id="middle">
+<form>
+<a href="#"><input type = "text" value = "reply" name = "dreply" id = "inner_reply"></a>
+</form>
+</div>
+
+</div>
+  <div class="footer">
+        <div class="container">
+            <p><span class="glyphicon glyphicon-heart"></span> $SCOPE</p>
+        </div>
+    </div>  
     <!--end container -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
