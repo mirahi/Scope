@@ -34,5 +34,7 @@ angular.module('scopeApp')
         }
         
         $scope.getImages();
+        $scope.getVideos();
+        $scope.getAudios();
         
 	});

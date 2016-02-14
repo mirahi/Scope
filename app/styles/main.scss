@@ -9,8 +9,9 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 @import 'helpers/typography';
 
 // Import layout styles
-@import 'layout/navigation.scss';
-@import 'layout/slide.scss';
+@import 'layout/navigation';
+@import 'layout/slide';
+@import 'layout/grid';
 
 .browsehappy {
   margin: 0.2em 0;
