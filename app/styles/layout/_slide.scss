@@ -13,13 +13,20 @@
 	height: 100%;
 	position: fixed;
 	cursor: pointer;
+<<<<<<< HEAD
 	top: 0;
 	left: 0;
+=======
+	top:0;
+	left:0;
+    z-index: 500;
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 }
 
 
 /*----------  TOGGLE OFF-CANVAS MENU  ----------*/
 
+<<<<<<< HEAD
 .toggle:checked + .container-fluid > .menu-container {
 	margin-left: 0;
 }
@@ -27,6 +34,17 @@
 .toggle:checked + .container-fluid > .content .full-screen-close {
 	display: block;
 	background: rgba(0, 0, 0, .5);
+=======
+.toggle:checked + .container-fluid > .menu-container 
+{
+  	margin-left: 0px;
+}
+
+.toggle:checked + .container-fluid > .page-content .full-screen-close
+{
+  	display: block;
+  	background: rgba(0,0,0,.5);
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 }
 
 .menu {
@@ -43,13 +61,19 @@
 	font-size: 2.25rem;
 }
 
+<<<<<<< HEAD
 .close-btn {
+=======
+.close-btn
+{
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 	float: right;
 	font-size: 1.5rem;
 	padding: 1.5rem;
 	color: #ededed;
 }
 
+<<<<<<< HEAD
 .menu-container,
 .content {
 	transition: margin 0.5s ease-in-out;
@@ -57,12 +81,32 @@
 
 .menu-container {
 	background: #2c3e50;
+=======
+.menu-container, 
+.page-content
+{
+	transition: margin 0.5s ease-in-out;
+}
+
+.menu-container
+{
+	background: $darkgrey;
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 	width: 25%;
+    min-width: 300px;
 	margin-left: -60%;
+<<<<<<< HEAD
 	float: left;
 	height: 100%;
 	position: fixed;
 	z-index: 1050;
+=======
+    margin-top: -50px;
+	float: left;
+	height: 100%;
+	position: fixed;
+	z-index:1050;
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 }
 
 .slide-menu i {
@@ -74,7 +118,13 @@
 .slide-menu li a {
 	color: #fff;
 	padding: 1.5rem;
+<<<<<<< HEAD
 	font-size: 1.125rem;
+=======
+
+	font-size: 1.725rem;
+
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 	text-transform: uppercase;
 	font-weight: 600;
 	display: block;
