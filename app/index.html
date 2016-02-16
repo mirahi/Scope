@@ -1,5 +1,9 @@
 <!doctype html>
+<<<<<<< HEAD
 <html lang="en" ng-app="scopeApp" ng-controller="AjaxCtrl">
+=======
+<html lang="en" ng-app="scopeApp">
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 
 <head>
     <meta charset="utf-8">
@@ -14,6 +18,7 @@
     <!-- build:css(.tmp) styles/main.css -->
 
     <link rel="stylesheet" href="styles/main.css">
+<<<<<<< HEAD
     <link rel="stylesheet" href="styles/partials/_colors.scss">
     <link rel="stylesheet" href="styles/partials/_mixins.scss">
     <link rel="stylesheet" href="styles/partials/_typography.scss">
@@ -53,10 +58,19 @@
                     <input type="text" class="search" ng-model="search.$">
                     <h1> Scope </h1>
     </div>
+=======
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <!-- endbuild -->
+</head>
+
+<body>
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
     <!--[if lte IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
+<<<<<<< HEAD
     <!-- Add your site or application content here -->
     <div class="header">
         <div class="navbar navbar-default" role="navigation">
@@ -212,8 +226,28 @@
             <p><span class="glyphicon glyphicon-heart"></span> $scope</p>
         </div>
     </div>
+=======
+    <input type="checkbox" id="offcanvas-menu" class="toggle" />
 
+    <div id="page" class="container-fluid">
+        <!-- Header, menu and upload -->
+        <menu-container></menu-container>
 
+        <section class="page-content">
+
+            <label for="offcanvas-menu" class="full-screen-close"></label>
+
+            <!--end menu-->
+
+            <upload-modal></upload-modal>
+            <header-nav></header-nav>
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
+
+            <!-- Site content -->
+            <main ng-controller="MediaController">
+                <div id="container-media" class="container">
+
+<<<<<<< HEAD
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
         ! function (A, n, g, u, l, a, r) {
@@ -226,6 +260,17 @@
         ga('create', 'UA-XXXXX-X');
         ga('send', 'pageview');
     </script>
+=======
+                    <grid-images></grid-images>
+
+                </div>
+            </main>
+
+            <footer class="footer">
+            </footer>
+        </section>
+    </div>
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -243,6 +288,7 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+<<<<<<< HEAD
     <script src="scripts/controllers/ajaxController.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
     <script src="scripts/controllers/userFilesController.js"></script>
@@ -267,6 +313,31 @@
     <!--filters-->
     <script src="scripts/filters/urlFilter.js"></script>
 
+=======
+    <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
+    <!--
+    <script src="scripts/surf.js"></script>
+-->
+    <!-- controllers -->
+    <script src="scripts/controllers/main.js"></script>
+    <script src="scripts/controllers/uploadController.js"></script>
+    <script src="scripts/controllers/mediaController.js"></script>
+
+    <!-- directives -->
+    <script src="scripts/directives/uploadModal.js"></script>
+    <script src="scripts/directives/menuContainer.js"></script>
+    <script src="scripts/directives/headerNav.js"></script>
+    <script src="scripts/directives/gridImages.js"></script>
+    <script src="scripts/directives/gridVideos.js"></script>
+
+    <!-- filters -->
+    <script src="scripts/filters/urlFilter.js"></script>
+
+    <!-- services -->
+    <script src="scripts/services/ajaxFactory.js"></script>
+
+    <!-- endbuild -->
+>>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 </body>
 
 </html>

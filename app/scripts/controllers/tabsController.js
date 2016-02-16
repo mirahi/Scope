@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
 .controller('TabsCtrl', ['$scope', function ($scope) {
     $scope.tabs = [{
@@ -18,6 +20,6 @@ angular.module('scopeApp')
     }
     
     $scope.isActiveTab = function(tabUrl) {
-        return tabUrl == $scope.currentTab;
+        return tabUrl === $scope.currentTab;
     }
 }]);

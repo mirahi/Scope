@@ -1,215 +1,92 @@
 $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
 // bower:scss
-@import "bootstrap-sass-official/assets/stylesheets/_bootstrap.scss";
+@import 'bootstrap-sass-official/assets/stylesheets/_bootstrap.scss';
 // endbower
-@import 'partials/colors';
-@import 'partials/mixins';
-@import 'partials/typography';
+
+// Import helpers
+@import 'helpers/colors';
+@import 'helpers/mixins';
+@import 'helpers/typography';
+
+// Import layout styles
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/slide';
+@import 'layout/grid';
+
+html { font-size: 62.5%; } 
+
 .browsehappy {
-	margin: 0.2em 0;
-	background: #ccc;
-	color: #000;
-	padding: 0.2em 0;
+  margin: 0.2em 0;
+  background: #ccc;
+  color: #000;
+  padding: 0.2em 0;
 }
 
 body {
-	padding: 0;
+  padding: 0;
+  margin-top: 50px;
+  background-color: $lightgrey;
 }
 
-.thumbnail {
-	width: 100%;
-	display: inline-block;
+#page {
+    padding-left: 0;
 }
 
-.buttonHolder {
-	margin: 20px 20px 20px 20px;
-	text-align: center;
+/** REGISTER PAGE */
+
+body#page-register {
+    background-image: url('../images/dawn-nature-sunset-trees.jpg');
+    background-size: cover;
 }
-
-#upload_button {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	height: 40px;
-	width: 40px;
+.img {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
 }
-
-#search_button {
-	position: absolute;
-	top: 5px;
-	right: 70px;
-	height: 40px;
-	width: 40px;
-}
-
-#modal-close-button {
-	display: none;
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	width: 25px;
-	height: 25px;
-}
-
-label {
-	font-size: 15px;
-	display: inline-block;
-	clear: left;
-	width: 250px;
-	text-align: right;
-}
-
-.submit_upload {
-	display: inline-block;
-}
-
-#upload_container {
-	margin: auto;
-	padding: 10px;
-	background-color: aliceblue;
-	display: none;
-}
-
-.search {
-	position: absolute;
-	top: 5px;
-	right: 10px;
-	display: none;
-}
-
-.title_newest {
-	text-align: center
-}
-
-.container_media {
-	margin: 50px 80px 0px 80px;
-}
-
-
 /* Everything but the jumbotron gets side spacing for mobile first views */
-
 .header,
 .marketing,
 .footer {
-	padding-left: 15px;
-	padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
-
-
-/* Custom page header */
-
-.header {
-	border-bottom: 1px solid #e5e5e5;
-	margin-bottom: 10px;
-	/* Make the masthead heading the same height as the navigation */
-	h3 {
-		margin-top: 0;
-		margin-bottom: 0;
-		line-height: 40px;
-		padding-bottom: 19px;
-	}
-}
-
 
 /* Custom page footer */
-
 .footer {
-	padding-top: 19px;
-	color: #777;
-	border-top: 1px solid #e5e5e5;
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
 }
 
 .container-narrow > hr {
-	margin: 30px 0;
+  margin: 30px 0;
 }
-
 
 /* Main marketing message and sign up button */
-
 .jumbotron {
-	text-align: center;
-	border-bottom: 1px solid #e5e5e5;
-	min-height: 300px;
-	background-image: url(back.jpg);
-	background-size: cover;
-	background-position: fixed;
-	.btn {
-		font-size: 21px;
-		padding: 14px 24px;
-	}
+  text-align: center;
+
+  .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+  }
 }
-
-
-/* Supporting marketing content */
-
-.marketing {
-	margin: 40px 0;
-	p + h4 {
-		margin-top: 28px;
-	}
-}
-
 
 /* Responsive: Portrait tablets and up */
-
 @media screen and (min-width: 768px) {
-	.container {
-		max-width: 730px;
-	}
-	/* Remove the padding we set earlier */
-	.header,
-	.marketing,
-	.footer {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	/* Space out the masthead */
-	.header {
-		margin-bottom: 30px;
-	}
-	/* Remove the bottom border on the jumbotron for visual effect */
-	.jumbotron {
-		border-bottom: 0;
-	}
-	.img {
-    position: relative;
-    float: left;
-    width: 100%;
-    height: 200px;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+  .container {
+    max-width: 730px;
+  }
 
-.thumbnail {
-    width: 30%;
-    display: inline-block;
-}
-//	img {
-////		width: 200%;
-////		height: 100%;
-////	}
-}
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-li {
-    float: left;
-    border: 1px solid #000;
-    border-bottom-width: 0;
-    margin: 3px 3px 0px 3px;
-    padding: 5px 5px 0px 5px;
-    background-color: #CCC;
-    color: #696969;
-}
-#mainView {
-    border: 1px solid black;
-	clear: both;
-	padding: 0 1em;
-}
-.active {
-    background-color: #FFF;
-    color: #000;
+  /* Remove the padding we set earlier */
+  .header,
+  .footer {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
 }
