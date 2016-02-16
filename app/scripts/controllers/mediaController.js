@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
 	.controller('MediaController', function ($scope, AjaxFactory) {
 		
@@ -34,5 +36,7 @@ angular.module('scopeApp')
         }
         
         $scope.getImages();
+        $scope.getVideos();
+        $scope.getAudios();
         
 	});

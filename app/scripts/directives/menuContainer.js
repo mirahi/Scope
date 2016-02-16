@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .directive('menuContainer', function () {
         return {

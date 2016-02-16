@@ -1,3 +1,5 @@
+"use strict";
+
 angular.module('scopeApp')
     .controller('UploadController', function ($scope, AjaxFactory) {
         console.log("asdpasd");

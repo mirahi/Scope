@@ -1,13 +1,9 @@
 /*=====  UTILITIES  ======*/
 *, *:after, *:before { -webkit-box-sizing: border-box; box-sizing: border-box; }
-.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:before, .clearfix:after { page-content: " "; display: table; }
 .clearfix:after { clear: both; }
 
 
-/*=====  GENERAL PAGE STYLES  ======*/
-html, 
-body,
-.container,
 .menu-container
 {
 	width: 100%; /*full screen width*/
@@ -35,11 +31,10 @@ body
 	font-family: 'Raleway', Arial, sans-serif;
 }
 
-.content
+.page-content
 {
 	width: 100%;
     max-width: 1200px; 
-
 	margin: 0 auto;
     padding: 0 1.5rem; 
     line-height: 1.5;
@@ -84,16 +79,12 @@ body
 .menu-options a
 {
 	display: block;
-
 	padding: 6px 12px;
 	border: 1px solid #2196F3;
 	border-radius: 5px;
-
 	color: #2196F3;
 	font-weight: 500;
-
 	margin-bottom: 12px;
-
 	transition: all .5s ease-in-out;
 }
 
@@ -152,7 +143,7 @@ body
 }
 
 @media (max-width: 330px) {
-	.content
+	.page-page-content
 	{
 		padding: 0 1rem;
 	}

@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .controller('LoginController', function ($scope, $location, AjaxFactory, MediaService) {
 
