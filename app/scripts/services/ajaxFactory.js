@@ -13,13 +13,16 @@ angular.module('scopeApp')
 			});
 		};
 
-		ajaxFunctions.register = function (args) {
-			return $http.post(urlBase + 'register', $httpParamSerializer(args), {
-				headers: {
-					'Content-Type': 'application/x-www-form-urlencoded'
-				}
-			});
-		};
+        ajaxFunctions.register = function(form) {
+            return $http({
+                method: 'POST',
+                url: urlBase + 'register',
+                headers: {
+                    'Content-Type' : 'application/x-www-form-urlencoded'
+                },
+                data: $httpParamSerializer(form)
+            });
+        };
 
 		ajaxFunctions.login = function (args) {
 			return $http.post(urlBase + 'login', $httpParamSerializer(args), {

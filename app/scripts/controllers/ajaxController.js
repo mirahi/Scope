@@ -1,6 +1,6 @@
 angular.module('scopeApp')
-	.controller('AjaxCtrl', function ($scope, ajaxService) {
-		ajaxService.success(function (data) {
-			$scope.files = data;
-		});
-	});
+    .controller('AjaxCtrl', function ($scope, ajaxService) {
+        ajaxService.success(function (data) {
+            $scope.files = data;
+        });
+    });
