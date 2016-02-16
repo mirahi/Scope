@@ -23,14 +23,21 @@
     <![endif]-->
 
     <input type="checkbox" id="offcanvas-menu" class="toggle" />
-    
-    <div class="container-fluid">
+
+    <div id="page" class="container-fluid">
         <!-- Header, menu and upload -->
         <menu-container></menu-container>
-        <upload-modal></upload-modal>
-        <header-nav></header-nav>
 
-        <!-- Site content -->
+        <section class="page-content">
+
+            <label for="offcanvas-menu" class="full-screen-close"></label>
+
+            <!--end menu-->
+
+            <upload-modal></upload-modal>
+            <header-nav></header-nav>
+
+            <!-- Site content -->
         <main>
         </main>
 
