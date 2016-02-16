@@ -16,16 +16,17 @@
 	cursor: pointer;
 	top:0;
 	left:0;
+    z-index: 500;
 }
 
 /*----------  TOGGLE OFF-CANVAS MENU  ----------*/
 
 .toggle:checked + .container-fluid > .menu-container 
 {
-  	margin-left: 0;
+  	margin-left: 0px;
 }
 
-.toggle:checked + .container-fluid > .content .full-screen-close
+.toggle:checked + .container-fluid > .page-content .full-screen-close
 {
   	display: block;
   	background: rgba(0,0,0,.5);
@@ -48,7 +49,6 @@
 	font-size: 2.25rem;
 }
 
-
 .close-btn
 {
 	float: right;
@@ -58,21 +58,21 @@
 }
 
 .menu-container, 
-.content
+.page-content
 {
 	transition: margin 0.5s ease-in-out;
 }
 
 .menu-container
 {
-	background: #2c3e50;
+	background: $darkgrey;
 	width: 25%;
+    min-width: 300px;
 	margin-left: -60%;
-	
+    margin-top: -50px;
 	float: left;
 	height: 100%;
-	position: absolute;
-
+	position: fixed;
 	z-index:1050;
 }
 
@@ -88,7 +88,7 @@
 	color: #fff;
 	padding: 1.5rem;
 
-	font-size: 1.125rem;
+	font-size: 1.725rem;
 
 	text-transform: uppercase;
 	font-weight: 600;

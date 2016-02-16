@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .controller('RegisterController', function ($scope, AjaxFactory, MediaService) {
 

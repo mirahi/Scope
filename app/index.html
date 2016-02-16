@@ -25,93 +25,32 @@
 
     <input type="checkbox" id="offcanvas-menu" class="toggle" />
 
-    <div class="container-fluid">
+    <div id="page" class="container-fluid">
         <!-- Header, menu and upload -->
         <menu-container></menu-container>
-        <upload-modal></upload-modal>
-        <header-nav></header-nav>
 
-        <!-- Site content -->
-        <main ng-controller="MediaController">
-            <div id="container-media" class="container">
-                <!--
+        <section class="page-content">
+
+            <label for="offcanvas-menu" class="full-screen-close"></label>
+
+            <!--end menu-->
+
+            <upload-modal></upload-modal>
+            <header-nav></header-nav>
+
+            <!-- Site content -->
+            <main ng-controller="MediaController">
+                <div id="container-media" class="container">
+
                     <grid-images></grid-images>
-                    -->
-            </div>
+                    <grid-videos></grid-videos>
 
-
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h1>Surfing</h1>
-            <div id="surf"></div>
-
-            <br>
-            <p>asd</p>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-
-
-            <h2 class="title-image-files">Latest images</h2>
-            <hr width="75%">
-            <div class="container_media">
-
-
-
-                <h2 class="title-audio-files">Latest audios </h2>
-                <hr width="75%">
-                <div class="container-audio">audio
-                    <div class="row">
-                        <div class="col-md-12">
-
-                            <div class="thumbnail" ng-repeat="audio in audios">
-                               {{functionimi(asd)}}
-
-                                <!-- <a ng-href="{{ audio.path | trustUrl }}">
-
-                                    <audio ng-src="{{ audio.path | trustUrl }}" audioplayer controls class="img">
-
-                                    </audio>
-                                </a> -->
-                            </div>
-
-                        </div>
-
-                    </div>
                 </div>
-                <h2 class="title-video-files">Latest videos </h2>
-                <hr width="75%">
-                <div class="container-video">video
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="thumbnail" ng-repeat="video in videos">
+            </main>
 
-
-                                <a ng-href="{{ video.path | trustUrl }}">
-                                    <video controls="controls" ng-src="{{ video.path | trustUrl }}" class="img">
-                                    </video>
-                            </div>
-                            </a>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <footer class="footer">
-        </footer>
-
+            <footer class="footer">
+            </footer>
+        </section>
     </div>
 
     <!-- build:js(.) scripts/vendor.js -->
@@ -131,8 +70,9 @@
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
+    <!--
     <script src="scripts/surf.js"></script>
-
+-->
     <!-- controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
@@ -143,6 +83,7 @@
     <script src="scripts/directives/menuContainer.js"></script>
     <script src="scripts/directives/headerNav.js"></script>
     <script src="scripts/directives/gridImages.js"></script>
+    <script src="scripts/directives/gridVideos.js"></script>
 
     <!-- filters -->
     <script src="scripts/filters/urlFilter.js"></script>
