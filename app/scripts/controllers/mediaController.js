@@ -4,7 +4,6 @@ angular.module('scopeApp')
 	.controller('MediaController', function ($scope, AjaxFactory) {
 
 
-<<<<<<< HEAD
 
 		$scope.getImages = function () {
 			AjaxFactory.getFiles('image')
@@ -37,23 +36,7 @@ angular.module('scopeApp')
 		}
 
 		$scope.getImages();
-		$scope.getAudios();
 		$scope.getVideos();
+		$scope.getAudios();
 
-=======
-        $scope.getVideos = function() {
-            AjaxFactory.getFiles('video')
-                .then(function(success) {
-                    $scope.videos = success.data;
-                    console.log(success.data);
-                }, function(error) {
-                    console.log(error.data);
-                });
-        }
-        
-        $scope.getImages();
-        $scope.getVideos();
-        $scope.getAudios();
-        
->>>>>>> a0f3e8bc225506da07209b661e4c72fb92b9a25c
 	});
