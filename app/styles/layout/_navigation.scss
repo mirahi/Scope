@@ -3,40 +3,27 @@
 .clearfix:before, .clearfix:after { page-content: " "; display: table; }
 .clearfix:after { clear: both; }
 
-
-.menu-container
-{
+.menu-container {
 	width: 100%; /*full screen width*/
 	height: 100%; /*full screen height*/
 	overflow-x: hidden; /*no horizontal scroll bar*/
+    
+    .fa {
+        font-size: 3rem;
+    }
 }
 
-a
-{
-	text-decoration: none;
-}
-
-ul
-{
+ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }
 
-body 
-{
-	color: #808080;
-	font-weight: 400;
-	font-size: 1em;
-	font-family: 'Raleway', Arial, sans-serif;
-}
-
-.page-content
-{
+.page-content {
 	width: 100%;
     max-width: 1200px; 
 	margin: 0 auto;
-    padding: 0 1.5rem; 
+    padding: 0; 
     line-height: 1.5;
 }
 
@@ -62,44 +49,37 @@ body
 
 /*===== SLIDE OPTIONS  ======*/
 
-.menu-options
-{
+.menu-options {
 	margin: 0 auto;
 	margin-bottom: 48px;
 	width: 30%;
 }
 
-.menu-options h3
-{
+.menu-options h3 {
 	text-align: center;
 	margin-top: 0;
 	margin-bottom: 36px;
 }
 
-.menu-options a
-{
+.menu-options a {
 	display: block;
 	padding: 6px 12px;
-	border: 1px solid #2196F3;
 	border-radius: 5px;
-	color: #2196F3;
 	font-weight: 500;
 	margin-bottom: 12px;
 	transition: all .5s ease-in-out;
 }
 
-.menu-options a:hover
-{
-	background: #2980b9;
+.menu-options a:hover {
+	background: $darkgreen;
 	color: #fff;
 }
 
-.left
-{
+.left {
 	float: left;
 }
-.right
-{
+
+.right {
 	float: right;
 }
 

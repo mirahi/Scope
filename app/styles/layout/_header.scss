@@ -10,6 +10,13 @@
 }
 
 .navbar-default {
-    background-color: $midgrey;
+    background-color: $darkgrey;
     border: none;
+    
+    .menu {
+        .fa {
+            font-size: 3.5rem;
+            color: white;
+        }
+    }
 }

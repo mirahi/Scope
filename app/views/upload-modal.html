@@ -7,14 +7,16 @@
             </div>
             <div class="modal-body">
                 <form id="upload-form">
-                    <input type="file" name="file" onchange="angular.element(this).scope().setMediaFile(this)">
-                    <input type="text" name="title">
-                    <input type="text" name="description">
+                    <input type="file" name="file" required onchange="angular.element(this).scope().setMediaFile(this)">
+                    <label for="title">Title</label>
+                    <input class="form-control" type="text" name="title" required>
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" name="description" required>
                 </form>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary" ng-click="postFile()">Upload</button>
+                <button type="submit" class="btn btn-primary" ng-click="postFile()">Upload</button>
             </div>
         </div>
         <!-- /.modal-content -->
