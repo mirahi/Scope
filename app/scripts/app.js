@@ -58,5 +58,12 @@ angular
         controller:"MediaController"
         
     })
+    .state('imageEditor',{
+        parent:'navbar',
+        url:'/imageEditor',
+        templateUrl:'views/image-editor.html',
+        controller:"imageEditorController"
+        
+    })
     ;
   });
