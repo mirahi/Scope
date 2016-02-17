@@ -15,16 +15,26 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.router'
   ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
+  .config(function ($stateProvider, $urlRouterProvider) {
+    $urlRouterProvider.otherwise("/");
+    $stateProvider
+      .state('navbar', {
+        abstract:true,
+        templateUrl: 'index.html'
+        })
+       .state('main', {
+           parent:'navbar',
+           url:'/',
+           templateUrl:'views/main.html',
+           controller:"MediaController"
+       })
+       .state('detail',{
+        parent:'navbar',
+        url:'/detail/:fileId',
+        templateUrl:'views/singlepage.html',
+        controller: 'detailController'
+    });
   });
