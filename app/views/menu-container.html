@@ -16,12 +16,17 @@
             <li><a href="register.html"><i class="fa fa-pencil"></i>Register</a></li>
             <div>
                 <h4>Login</h4>
-                <form id="loginForm" enctype="application/x-www-form-urlencoded">
-                    <input name="username" type="text" ng-model="uname">
-                    <br>
-                    <input name="password" type="text" ng-model="pwd">
-                    <br>
-                    <button ng-click="login()">Login</button>
+                <form id="loginForm" ng-submit="login()" class="modal-form" ng-controller="UserController">
+                    <span>
+                        <input class="modal-form__input" type="text" placeholder="Username" name="usernameLogin" ng-model="loginUsername">
+                        <label for="username"></label>
+                    </span>
+                    <span>
+                        <input class="modal-form__input" type="password" placeholder="Password" name="passwordLogin" ng-model="loginPassword">
+                        <label for="password"></label>
+                    </span>
+                    <p class="modal-form__text" ng-show="wrongLogin">Wrong username or password</p>
+                    <button type="submit">Log in</button>
                 </form>
             </div>
         </ul>

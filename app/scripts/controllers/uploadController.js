@@ -1,7 +1,7 @@
 "use strict";
 
 angular.module('scopeApp')
-    .controller('UploadController', function ($scope, AjaxFactory) {
+    .controller('UploadController', function ($scope, AjaxFactory, $localStorage) {
         console.log("asdpasd");
         $scope.setMediaFile = function (element) {
             $scope.mimeType = element.files[0].type;
@@ -10,8 +10,9 @@ angular.module('scopeApp')
         };
 
         $scope.postFile = function () {
+            console.log($localStorage.userId);
             var formdata = new FormData($('#upload-form')[0]);
-            formdata.append('user', 6);
+            formdata.append('user', $localStorage.userId);
             formdata.append('type', $scope.type);
             formdata.append('mime-type', $scope.mimeType);
             var response = AjaxFactory.uploadFile(formdata);

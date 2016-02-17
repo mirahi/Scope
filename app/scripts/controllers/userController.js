@@ -1,11 +1,10 @@
 angular.module('scopeApp')
-    .controller('LoginController', function ($scope, $location, AjaxFactory, MediaService) {
+    .controller('UserController', function ($scope, AjaxFactory, $localStorage, $window) {
 
         var doLogin = function (response) {
             MediaService.setVariable('userData', response.data);
             $location.path('/myFiles').replace();
         };
-
 
         //Login
         $scope.wrongLogin = false;
@@ -14,8 +13,8 @@ angular.module('scopeApp')
                 'username': $scope.loginUsername,
                 'password': $scope.loginPassword
             };
-
-            ajaxFactory.userLogin(userData)
+            console.log(userData);
+            AjaxFactory.userLogin(userData)
                 .then(function(success) {
                     if (success.data.error == undefined) {
                         $scope.$storage = $localStorage.$default({
@@ -24,8 +23,8 @@ angular.module('scopeApp')
                         });
                         $scope.username = $scope.loginUsername;
                         $scope.userId = $scope.loginUsername;
-                        $window.location.reload();
-                        console.log($scope.$storage);
+                        //$window.location.reload();
+                        console.log($scope.$storage.userId);
                     } else {
                         console.log("Wrong login");
                         $scope.wrongLogin = true;
