@@ -1,36 +1,49 @@
 'use strict';
 
 angular.module('scopeApp')
-    .controller('LoginController', function ($scope, $location, AjaxFactory, MediaService) {
+	.controller('LoginController', function ($scope, $location, AjaxFactory, MediaService, $mdToast, $animate) {
 
-        var doLogin = function (response) {
-            MediaService.setVariable('userData', response.data);
-            $location.path('/myFiles').replace();
-        };
+		var doLogin = function (response) {
+			MediaService.setVariable('userData', response.data);
+			$location.path('/myFiles').replace();
+		};
 
 
-        $scope.login = function () {
+		$scope.login = function () {
 
-            var data = {
-                username: $scope.uname,
-                password: $scope.pwd
-            };
 
-            var request = AjaxFactory.login(data);
+			var data = {
+				username: $scope.uname,
+				password: $scope.pwd
+			};
 
-            request.then(doLogin, MediaService.handleError);
-        };
+			var request = AjaxFactory.login(data);
 
-        $scope.register = function () {
+			request.then(doLogin, MediaService.handleError);
 
-            var data = {
-                username: $scope.uname,
-                password: $scope.pwd,
-                email: $scope.email
-            };
+			response.then(function (success) {
+				console.log("login success");
+				$mdToast.show(
+					$mdToast.simple()
+					.textContent('successfully logged')
+					.position('top left')
 
-            var request = AjaxFactory.register(data);
+					.hideDelay(5000)
 
-            request.then(doLogin, MediaService.handleError);
-        };
-    });
+				);
+			})
+		};
+
+		$scope.register = function () {
+
+			var data = {
+				username: $scope.uname,
+				password: $scope.pwd,
+				email: $scope.email
+			};
+
+			var request = AjaxFactory.register(data);
+
+			request.then(doLogin, MediaService.handleError);
+		};
+	});

@@ -1,31 +1,35 @@
 <aside class="menu-container">
 
-    <div class="menu-heading clearfix">
-        <label for="offcanvas-menu" class="close-btn">
-            <i class="fa fa-times"></i>
-        </label>
-    </div>
-    <!--end menu-heading-->
+	<div class="menu-heading clearfix">
+		<label for="offcanvas-menu" class="close-btn">
+			<i class="fa fa-times"></i>
+		</label>
+	</div>
+	<!--end menu-heading-->
 
-    <nav class="slide-menu">
-        <ul>
-            <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
-            <li><a href="images.html"><i class="fa fa-star"></i>Images</a></li>
-            <li><a href="videos.html"><i class="fa fa-folder-open"></i>Videos</a></li>
-            <li><a href="audio.html"><i class="fa fa-cogs"></i>Audio</a></li>
-            <li><a href="register.html"><i class="fa fa-pencil"></i>Register</a></li>
-            <div>
-                <h4>Login</h4>
-                <form id="loginForm" enctype="application/x-www-form-urlencoded">
-                    <input name="username" type="text" ng-model="uname">
-                    <br>
-                    <input name="password" type="text" ng-model="pwd">
-                    <br>
-                    <button ng-click="login()">Login</button>
-                </form>
-            </div>
-        </ul>
-    </nav>
-    <!--end slide-menu -->
+	<nav class="slide-menu">
+		<ul>
+			<li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+			<li><a href="images.html"><i class="fa fa-star"></i>Images</a></li>
+			<li><a href="videos.html"><i class="fa fa-folder-open"></i>Videos</a></li>
+			<li><a href="audio.html"><i class="fa fa-cogs"></i>Audio</a></li>
+			<li><a href="register.html"><i class="fa fa-pencil"></i>Register</a></li>
+			<div>
+				<div ng-controller="LoginController">
+					<h4>Login</h4>
+					<form id="loginForm" enctype="application/x-www-form-urlencoded">
+						<input name="username" type="text" ng-model="uname">
+						<br>
+						<input name="password" type="text" ng-model="pwd">
+						<br>
+
+						<button ng-click="login()">Login</button>
+
+					</form>
+				</div>
+			</div>
+		</ul>
+	</nav>
+	<!--end slide-menu -->
 
 </aside>
