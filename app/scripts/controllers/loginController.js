@@ -52,7 +52,7 @@ angular.module('scopeApp')
                 email: $scope.email
             };
 
-            var request = AjaxFactory.register(data);
+            var request = ajaxFactory.register(data);
 
             request.then(doLogin, MediaService.handleError);
         };

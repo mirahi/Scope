@@ -1,0 +1,25 @@
+<div class="container">
+    <!-- Image	-->
+    <div class="container">
+
+        <img class="img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
+    </div>
+
+    <!--end content body-->
+
+
+    <!--    </section>-->
+    <!--end content-->
+
+
+    <form id="comment-form" ng-submit="postComment()" ng-controller="CommentController">
+        <span>
+                        <input class="modal-form__input" type="text" placeholder="Comment" name="comment" ng-model="comment">
+                        <label for="comment"></label>
+                    </span>
+        <span>
+		<input type="submit" name="submit" value="Add Comment">
+	</span>
+
+    </form>
+</div>
