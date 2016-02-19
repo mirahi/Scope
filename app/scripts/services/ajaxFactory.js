@@ -50,7 +50,7 @@ angular.module('scopeApp')
         };
     
         ajaxFunctions.getItemComments = function (fileId) {
-            return $http.get(urlBase + 'comments/file/' + fileId);
+            return $http.get(baseUrl + 'comments/file/' + fileId);
         };
 
         return ajaxFunctions;

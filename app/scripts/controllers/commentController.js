@@ -21,4 +21,11 @@ angular.module('scopeApp')
                     console.log(error.data);
                 });
         };
-});
+    
+        AjaxFactory.getItemComments($stateParams.fileId)
+            .then(function (success) {
+                $scope.itemComments = success.data;
+            }, function (error) {
+                mediaFactory.handleError(error);
+            });
+    });
