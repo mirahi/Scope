@@ -1,12 +1,44 @@
 <div class="row">
-    <div class="thumbnail-video col-xs-12" ng-repeat="video in videos">
+    <div class="thumbnail-video col-xs-12 col-sm-6" ng-controller="VideogularController" ng-repeat="video in videos">
         <div class="col-xs-6">
-            <video class="video" controls="controls" ng-src="{{ video.path | trustUrl }}">
-            </video>
+            
+            
+            
+  
+            
+
+            <videogular vg-theme="config.theme">
+                <!--
+                <vg-media vg-src="config.sources" vg-tracks="config.tracks">
+                    -->
+                    
+                    <vg-media vg-src="{{ video.path | trustUrl }}">
+                </vg-media>
+                <vg-controls vg-preload="auto">
+                    <vg-play-pause-button></vg-play-pause-button>
+                    <vg-scrub-bar>
+                        <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                    </vg-scrub-bar>
+                    <vg-volume>
+                        <vg-mute-button></vg-mute-button>
+                        <vg-volume-bar></vg-volume-bar>
+                    </vg-volume>
+                    <vg-fullscreen-button></vg-fullscreen-button>
+                </vg-controls>
+                <vg-overlay-play></vg-overlay-play>
+                <vg-poster vg-url="config.plugins.poster"></vg-poster>
+
+            </videogular>
+
+
         </div>
-        <div class="col-xs-6">
+        <div class="thumbnail-video-info col-xs-6">
             <a ng-href="{{ video.path | trustUrl }}">
                 <h1>{{video.title}}</h1>
+                <h2>{{video.userId}}</h2>
+                
+                <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-comment-o"></i>
             </a>
         </div>
     </div>

@@ -1,29 +1,14 @@
-
-
-.navbar-logo {
-    
-    margin: 0px 50px;
-    
-     a:hover,
-     a:active {   
-        @extend .logo;
-         text-decoration: none;
-     }
+/* Search icon by IcoMoon, made with http://icomoon.io/app/ */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon/icomoon.eot');
+	src:url('../fonts/icomoon/icomoon.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/icomoon/icomoon.woff') format('woff'),
+		url('../fonts/icomoon/icomoon.ttf') format('truetype'),
+		url('../fonts/icomoon/icomoon.svg#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
-
-.navbar-default {
-    background-color: $darkgrey;
-    border: none;
-    
-    .menu {
-        .fa {
-            font-size: 3.5rem;
-            color: white;
-        }
-    }
-}
-
-// Expandable search
 
 .sb-search {
 	position: relative;
@@ -33,11 +18,9 @@
 	height: 60px;
 	float: right;
 	overflow: hidden;
-
 	-webkit-transition: width 0.3s;
 	-moz-transition: width 0.3s;
 	transition: width 0.3s;
-
 	-webkit-backface-visibility: hidden;
 }
 
@@ -56,11 +39,6 @@
 	font-family: inherit;
 	font-size: 20px;
 	color: #2c3e50;
-}
-
-input[type="search"].sb-search-input {
-	-webkit-appearance: none;
-	-webkit-border-radius: 0px;
 }
 
 .sb-search-input::-webkit-input-placeholder {
@@ -104,6 +82,7 @@ input[type="search"].sb-search-input {
 	outline: none;
 	z-index: -1;
 }
+
 .sb-icon-search {
 	color: #fff;
 	background: #e67e22;
@@ -122,16 +101,19 @@ input[type="search"].sb-search-input {
 	content: "\e000";
 }
 
+/* Open state */
 .sb-search.sb-search-open,
 .no-js .sb-search {
 	width: 100%;
 }
+
 .sb-search.sb-search-open .sb-icon-search,
 .no-js .sb-search .sb-icon-search {
 	background: #da6d0d;
 	color: #fff;
 	z-index: 11;
 }
+
 .sb-search.sb-search-open .sb-search-submit,
 .no-js .sb-search .sb-search-submit {
 	z-index: 90;

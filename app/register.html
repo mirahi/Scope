@@ -38,8 +38,33 @@
             <br>
             <br>
             <br>
-            
+
+            <!--
             <form-register></form-register>
+            -->
+
+            <div ng-controller="RegisterController">
+                <h4>Register</h4>
+                <form id="form-register" class="form-horizontal" enctype="application/x-www-form-urlencoded">
+
+                    <div class="form-group">
+                        <label for="register-email">Email</label>
+                        <input id="register-email" class="form-control" name="email" type="text" ng-model="email" placeholder="e.g. john.doe@gmail.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="register-uname">Username</label>
+                        <input id="register-uname" class="form-control" name="username" type="text" ng-model="uname" placeholder="Your username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-pwd">Password</label>
+                        <input id="register-pwd" class="form-control" name="password" type="text" ng-model="pwd" palceholder="Password">
+
+                    </div>
+
+                    <button ng-click="register()">Register</button>
+                </form>
+            </div>
 
             <footer class="footer">
 

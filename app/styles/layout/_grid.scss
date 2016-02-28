@@ -27,6 +27,22 @@
 
 .thumbnail-video {
     position: relative;
+    margin-bottom: 10px;
+    background-color: white;
+    font-size: 2rem;
+}
+
+.thumbnail-video-info {
+    height: 100%;
+    
+    a,
+    a:hover,
+    .fa,
+    .fa:hover {
+        text-decoration: none;
+        font-size: 2rem;
+    }
+    
 }
 
 video {
@@ -39,6 +55,7 @@ video {
     width: 100%;
     height: 100%;
     background-size: cover;
+    background-position: center;
     min-height: 250px;
 }
 

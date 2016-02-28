@@ -12,6 +12,7 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="bower_components/videogular-themes-default/videogular.css" />
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
@@ -63,6 +64,10 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    
+
+    <script src="bower_components/videogular-controls/vg-controls.js"></script>
+    <script src="bower_components/videogular-buffering/vg-buffering.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     
@@ -70,7 +75,6 @@
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.52/wavesurfer.min.js"></script>
     <!--
     <script src="scripts/surf.js"></script>
 -->
@@ -79,6 +83,7 @@
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
     <script src="scripts/controllers/mediaController.js"></script>
+    <script src="scripts/controllers/videogularController.js"></script>
 
     <!-- directives -->
     <script src="scripts/directives/uploadModal.js"></script>
