@@ -1,39 +1,52 @@
-
-<!--
- <div class="jumbotron">
-     <h1> Scope </h1></div>
--->
 <div class="container">
-            <!-- Image	-->
-        <div class="container">
-            
-  <img class="img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}"/>
-</div>
-                
-    <!--end content body-->
+    <!--Image-->
+    <div class="container" ng-if="isImage">
+        <img class="detail-padding img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}"/>
+    </div>
 
+    <!--Video-->    
+    <div class="container detail-padding" ng-if="isVideo">
+        <video controls width="800" height="600" ng-src="{{path}}">
+        </video>
+        
+    </div>
+    
+    <!--Audio-->
+    <div class="container detail-padding" ng-if="isAudio" style="text-align: center">
+        
+        <ng-wavesurfer url="{{path}}" wave-color="#337ab7" progress-color="#23527c" height="64"></ng-wavesurfer>
+             <div class="col-sm-2">
+                        <button class="btn btn-success btn-block" ng-click="wavesurfer.playPause()">
+                            <span id="play" ng-show="paused">
+                                <i class="glyphicon glyphicon-play"></i>
+                                Play
+                            </span>
 
-<!--    </section>-->
-    <!--end content-->
-    
-    
-<div id="comment_form">
-	
-	<div>
-		<input type="text" name="name" id="name" value="" placeholder="Name">
-	</div>
-	<div>
-		<input type="email" name="email" id="email" value="" placeholder="Email">
-	</div>
-	<div>
-		<input type="url" name="website" id="website" value="" placeholder="Website URL">
-	</div>
-	<div>
-		<textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
-	</div>
-	<div>
-		<input type="submit" name="submit" value="Add Comment">
-	</div>
-	
-</div>
+                            <span id="pause" ng-show="!paused">
+                                <i class="glyphicon glyphicon-pause"></i>
+                                Pause
+                            </span>
+                        </button>
+                    </div>
+    </div>
+
+    <div id="comment_form">
+
+        <div>
+            <input type="text" name="name" id="name" value="" placeholder="Name">
+        </div>
+        <div>
+            <input type="email" name="email" id="email" value="" placeholder="Email">
+        </div>
+        <div>
+            <input type="url" name="website" id="website" value="" placeholder="Website URL">
+        </div>
+        <div>
+            <textarea rows="10" name="comment" id="comment" placeholder="Comment"></textarea>
+        </div>
+        <div>
+            <input type="submit" name="submit" value="Add Comment">
+        </div>
+
+    </div>
 </div>

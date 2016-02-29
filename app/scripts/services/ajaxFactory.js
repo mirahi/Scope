@@ -1,3 +1,4 @@
+"use strict";
 angular.module('scopeApp')
     .factory('AjaxFactory', function($http, $httpParamSerializer) {
         var baseUrl = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
@@ -38,7 +39,7 @@ angular.module('scopeApp')
     
         ajaxFunctions.getFileById = function(fileId) {
             return $http.get(baseUrl+ 'file/'+fileId);
-        }
+        };
         
         return ajaxFunctions;
     });
