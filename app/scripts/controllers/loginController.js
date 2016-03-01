@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('scopeApp')
-    .controller('LoginController', function ($scope, ajaxFactory, $localStorage, $window) {
+    .controller('LoginController', function ($scope, AjaxFactory, $localStorage, $window) {
 
-        var doLogin = function (response) {
+      /*  var doLogin = function (response) {
             MediaService.setVariable('userData', response.data);
             $location.path('/myFiles').replace();
-        };
+        };*/
 
 
 //Login
@@ -17,9 +17,9 @@ angular.module('scopeApp')
                 'password': $scope.loginPassword
             };
 
-            ajaxFactory.userLogin(userData)
+            AjaxFactory.userLogin(userData)
                 .then(function(success) {
-                    if (success.data.error == undefined) {
+                    if (success.data.error === undefined) {
                         $scope.$storage = $localStorage.$default({
                             userId: success.data.userId,
                             username: $scope.loginUsername
@@ -44,16 +44,4 @@ angular.module('scopeApp')
             $scope.userId = $localStorage.userId;
         }
 
-        $scope.register = function () {
-
-            var data = {
-                username: $scope.uname,
-                password: $scope.pwd,
-                email: $scope.email
-            };
-
-            var request = ajaxFactory.register(data);
-
-            request.then(doLogin, MediaService.handleError);
-        };
     });

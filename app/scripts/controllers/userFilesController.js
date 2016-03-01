@@ -1,3 +1,4 @@
+'use strict';
 
 angular.module('scopeApp')
     .controller('UserFilesController', function ($scope, $sce, AjaxFactory, MediaService) {
