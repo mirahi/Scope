@@ -64,5 +64,6 @@ angular
                 templateUrl: 'views/image-editor.html',
                 controller: "imageEditorController"
 
+            })
+
             });
-    });

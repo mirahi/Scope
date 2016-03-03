@@ -1,33 +1,33 @@
 <div class="container">
     <!--Image-->
     <div class="container" ng-if="isImage">
-        <img class="detail-padding img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}"/>
+        <img class="detail-padding img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
     </div>
 
-    <!--Video-->    
+    <!--Video-->
     <div class="container detail-padding" ng-if="isVideo">
         <video controls width="800" height="600" ng-src="{{path}}">
         </video>
-        
+
     </div>
-    
+
     <!--Audio-->
     <div class="container detail-padding" ng-if="isAudio" style="text-align: center">
-        
+
         <ng-wavesurfer url="{{path}}" wave-color="#337ab7" progress-color="#23527c" height="64"></ng-wavesurfer>
-             <div class="col-sm-2">
-                        <button class="btn btn-success btn-block" ng-click="wavesurfer.playPause()">
-                            <span id="play" ng-show="paused">
+        <div class="col-sm-2">
+            <button class="btn btn-success btn-block" ng-click="wavesurfer.playPause()">
+                <span id="play" ng-show="paused">
                                 <i class="glyphicon glyphicon-play"></i>
                                 Play
                             </span>
 
-                            <span id="pause" ng-show="!paused">
+                <span id="pause" ng-show="!paused">
                                 <i class="glyphicon glyphicon-pause"></i>
                                 Pause
                             </span>
-                        </button>
-                    </div>
+            </button>
+        </div>
     </div>
 
     <div id="comment_form">
