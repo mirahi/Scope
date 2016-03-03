@@ -16,7 +16,8 @@ angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'wu.masonry'
   ])
     .config(function ($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise("/");
@@ -64,6 +65,6 @@ angular
                 templateUrl: 'views/image-editor.html',
                 controller: "imageEditorController"
 
-            })
+            });
 
             });

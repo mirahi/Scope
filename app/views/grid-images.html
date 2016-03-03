@@ -1,8 +1,10 @@
 <div class="row">
-    <div class="container-img col-xs-12 col-sm-6 col-md-4" ng-repeat="image in images|filter: keyword ">
+    <!--
+    <div class="col-xs-12 col-sm-6 col-md-4" 
+         ng-repeat="image in images|filter: keyword ">
         <figure class="thumbnail-img">
             <a ng-href="#/detail/{{image.fileId}}">
-                <div class="container-image" ng-attr-style="background-image: url('{{ image.thumbNails.medium | trustUrl }}');"></div>
+                <div class="container-image"><img ng-src="{{ image.thumbNails.medium | trustUrl}}"></div>
                 <figcaption class="caption">
                     <h3>{{ image.title }}</h3>
                     <i class="fa fa-heart-o"></i>
@@ -11,4 +13,23 @@
             </a>
         </figure>
     </div>
+-->
+    
+<!--
+    <div class="pad-sides" masonry="{columnWidth: 100, gutter: 5, transitionDuration: '.9s', hiddenStyle: {opacity: .001, transform: 'scale(0.01)', transform: 'rotate(200deg)'}, visibleStyle: {opacity: 1, transform: 'rotate(200deg)'}}">
+    <div class="masonry-brick" ng-repeat="singer in singers">
+       <img ng-src="{{ singer }}" alt="a singer">
+    </div>
 </div>
+-->
+    <div >
+        <div masonry>
+            <div class="grid-item grid-item--width2 masonry-brick" ng-repeat="image in images|filter: keyword ">
+                <a ng-href="#/detail/{{image.fileId}}">
+                    <img ng-src="{{image.thumbNails.medium | trustUrl}}" alt="Error">
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
