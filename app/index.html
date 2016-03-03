@@ -25,7 +25,7 @@
 
     <input type="checkbox" id="offcanvas-menu" class="toggle" />
 
-    <div id="page" class="container-fluid">
+    <div class="container-fluid">
         <!-- Header, menu and upload -->
         <menu-container></menu-container>
 
@@ -40,9 +40,7 @@
 
             <!-- Site content -->
 
-
-                    <ui-view></ui-view>
-
+            <ui-view></ui-view>
 
             <footer class="footer">
             </footer>
@@ -78,6 +76,7 @@
     <script src="scripts/controllers/userController.js"></script>
     <script src="scripts/controllers/detailController.js"></script>
     <script src="scripts/controllers/commentController.js"></script>
+    <script src="scripts/controllers/registerController.js"></script>
 
     <!-- directives -->
     <script src="scripts/directives/uploadModal.js"></script>
@@ -85,6 +84,7 @@
     <script src="scripts/directives/headerNav.js"></script>
     <script src="scripts/directives/gridImages.js"></script>
     <script src="scripts/directives/gridVideos.js"></script>
+    <script src="scripts/directives/audioWave.js"></script>
 
     <!-- filters -->
     <script src="scripts/filters/urlFilter.js"></script>
@@ -92,6 +92,17 @@
     <!-- services -->
     <script src="scripts/services/ajaxFactory.js"></script>
     <script src="scripts/services/mediaService.js"></script>
+    
+    <script type='text/javascript'>
+      // When your page loads
+      $(function(){
+         // When the toggle areas in your navbar are clicked, toggle them
+         $("#search-button, #search-icon").click(function(e){
+             e.preventDefault();
+             $("#search-button, #search-form").toggle();
+         });
+      })  
+</script>
 
     <!-- endbuild -->
 </body>

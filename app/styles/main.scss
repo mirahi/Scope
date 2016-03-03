@@ -5,16 +5,18 @@ $icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/boots
 
 // Import helpers
 @import 'helpers/colors';
-@import 'helpers/mixins';
 @import 'helpers/typography';
 
 // Import layout styles
+@import 'layout/buttons';
+@import 'layout/grid';
 @import 'layout/header';
 @import 'layout/navigation';
 @import 'layout/slide';
-@import 'layout/grid';
+@import 'layout/singlepage';
 
-html { font-size: 62.5%; } 
+html { font-size: 62.5%;
+    border-radius: none; } 
 
 .browsehappy {
   margin: 0.2em 0;
@@ -29,16 +31,10 @@ body {
   background-color: $lightgrey;
 }
 
-#page {
-    padding-left: 0;
+main {
+    padding-top: 30px;
 }
 
-/** REGISTER PAGE */
-
-body#page-register {
-    background-image: url('../images/dawn-nature-sunset-trees.jpg');
-    background-size: cover;
-}
 .img {
     height: 200px;
     background-size: cover;

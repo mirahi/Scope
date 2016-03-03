@@ -30,7 +30,7 @@ angular
         templateUrl:'views/singlepage.html',
         controller: 'detailController'
     })
-    .state('image',{
+    .state('images',{
         parent:'navbar',
         url:'/image',
         templateUrl:'views/grid-images.html',
@@ -44,11 +44,18 @@ angular
         controller:"MediaController"
         
     })
-    .state('video',{
+    .state('videos',{
         parent:'navbar',
         url:'/video',
         templateUrl:'views/grid-videos.html',
         controller:"MediaController"
+        
+    })
+    .state('register',{
+        parent:'navbar',
+        url:'/register',
+        templateUrl:'views/register.html',
+        controller:"RegisterController"
         
     })
     ;

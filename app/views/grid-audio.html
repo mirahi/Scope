@@ -1,9 +1,47 @@
-<div class="row">
-    <div class="thumbnail-audio col-xs-12 col-md-4 col-lg-3" ng-repeat="audio in audios">
-        <a ng-href="{{ audio.path | trustUrl }}">
-            <audio controls="controls" ng-src="{{ audio.path | trustUrl }}" class="img">
-            </audio>
-        </a>
-        <h1>{{audio.title}}</h1>
+<!--
+OLD STUFF COMMENTED OUT, TRYING NEW THINGS
+    
+<main>
+    <div class="row">
+        <div class="thumbnail-audio col-xs-12 col-md-4 col-lg-3" ng-repeat="audio in audios">
+            <a ng-href="{{ audio.path | trustUrl }}">
+                <audio controls="controls" ng-src="{{ audio.path | trustUrl }}" class="img">
+                </audio>
+            </a>
+            <h1>{{audio.title}}</h1>
+        </div>
     </div>
-</div>
+</main> -->
+
+<main>
+    <div class="row">
+
+        <div class="container detail-padding" ng-if="isAudio" style="text-align: center">
+
+            <ng-wavesurfer url="{{path}}" wave-color="#337ab7" progress-color="#23527c" height="64"></ng-wavesurfer>
+            <div class="col-sm-2">
+                <button class="btn btn-success btn-block" ng-click="wavesurfer.playPause()">
+                    <span id="play" ng-show="paused">
+                    <i class="glyphicon glyphicon-play"></i>Play
+                </span>
+                    <span id="pause" ng-show="!paused">
+                    <i class="glyphicon glyphicon-pause"></i>Pause
+                </span>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-12 col-md-4" ng-repeat="audio in audios">
+            <a ng-href="#/detail/{{audio.fileId}}">
+                <div class="thumbnail-audio">
+                    <i class="fa fa-play-circle"></i>
+                    <h1>{{audio.title}}</h1>
+                </div>
+            </a>
+        </div>
+    </div>
+</main>
