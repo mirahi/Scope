@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .service('MediaService', function () {
         var mediaVariables = {

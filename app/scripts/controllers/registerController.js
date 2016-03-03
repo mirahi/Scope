@@ -18,7 +18,7 @@ angular.module('scopeApp')
                 MediaService.setVariable('userData', response.data);
                 $scope.logged = true;
             }, function (error) {
-                console.log(error.data);
+                MediaService.handleError(error);
             });
         };
     });

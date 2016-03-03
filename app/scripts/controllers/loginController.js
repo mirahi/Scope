@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('scopeApp')
-    .controller('LoginController', function ($scope, AjaxFactory, $localStorage, $window) {
+    .controller('LoginController', function ($scope, AjaxFactory, $localStorage, $window, MediaService) {
 
       /*  var doLogin = function (response) {
             MediaService.setVariable('userData', response.data);
@@ -32,10 +32,17 @@ angular.module('scopeApp')
                         console.log("Wrong login");
                         $scope.wrongLogin = true;
                     }
-                }, function(err) {
-                    console.log(err.data);
+                }, function(error) {
+                    MediaService.handleError(error);
                 });
         };
+        //Logout
+        $scope.logout = function () {
+            delete $localStorage.username;
+            delete $localStorage.userId;
+            $window.location.reload();
+            // $location.path();
+            // $location.path('/hot');
         //Login check
         $scope.loggedIn = false;
         if ($localStorage.userId !== undefined) {

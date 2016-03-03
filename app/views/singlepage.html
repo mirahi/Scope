@@ -1,7 +1,6 @@
 <div class="container">
     <!-- Image	-->
     <div class="container">
-
         <img class="img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
     </div>
 
@@ -12,8 +11,10 @@
     <!--end content-->
     <div ng-controller="CommentController">
         <div ng-repeat="comment in itemComments">
-            <h4>{{ comment.username }}</h4>
-            <p>{{ comment.comment }}</p>
+            <a ng-href="#/profile/39">
+                <h4>{{ comment.username }}</h4>
+            </a>
+                <p>{{ comment.comment }}</p>
         </div>
 
 
@@ -25,6 +26,8 @@
             <span>
 		<input type="submit" name="submit" value="Add Comment">
 	</span>
+            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
+            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
 
         </form>
     </div>

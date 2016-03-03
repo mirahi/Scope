@@ -2,7 +2,7 @@
 
 angular.module('scopeApp')
     .controller('CommentController', function ($scope, $localStorage, AjaxFactory, $stateParams, $location, $route) {
-        console.log("commentcontroller");
+        $scope.liked = false;
 
         $scope.postComment = function () {
             var commentData = {
@@ -31,7 +31,7 @@ angular.module('scopeApp')
 
         $scope.likeItem = function () {
             if (!$scope.liked) {
-                AjaxFactory.likeItem($scope.itemId, $localStorage.userId)
+                AjaxFactory.likeItem($stateParams.fileId, $localStorage.userId)
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
@@ -41,7 +41,7 @@ angular.module('scopeApp')
                     });
 
             } else {
-                AjaxFactory.unlikeItem($scope.itemId, $localStorage.userId)
+                AjaxFactory.unlikeItem($stateParams.fileId, $localStorage.userId)
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
@@ -51,4 +51,19 @@ angular.module('scopeApp')
                     });
             }
         };
+    
+        AjaxFactory.getLikesByUser($localStorage.userId)
+            .then(function (success) {
+                var likedItems = success.data;
+                for (var item in likedItems) {
+                    console.log("liked: " + likedItems[item].fileId);
+                    console.log($stateParams.fileId);
+                    if ($stateParams.fileId == likedItems[item].fileId) {
+                        $scope.liked = true;
+                        console.log($scope.liked);
+                    }
+                }
+            }, function (error) {
+                console.log(error.data);
+            });
     });

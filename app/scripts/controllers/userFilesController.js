@@ -16,6 +16,6 @@ angular.module('scopeApp')
             console.log(response);
             $scope.files = response.data;
         }, function (error) {
-            console.log(error.data);
+            MediaService.handleError(error);
         });
     });
