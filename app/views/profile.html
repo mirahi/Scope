@@ -2,10 +2,10 @@
 
     <div ng-controller="LikeController">
         <div ng-repeat="item in likedItems">
-            asf
-            <h4>{{ item }}</h4>
+        <figure class="thumbnail-img">
+            <a ng-href="#/detail/{{image.fileId}}">
+                <div class="container-image" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');"></div>
+                <figcaption class="caption">
         </div>
-
-
      
     </div>

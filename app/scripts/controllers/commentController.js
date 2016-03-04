@@ -1,9 +1,9 @@
 "use strict";
 
 angular.module('scopeApp')
-    .controller('CommentController', function ($scope, $localStorage, AjaxFactory, $stateParams, $location, $route) {
+    .controller('CommentController', function ($scope, $localStorage, AjaxFactory, $stateParams, $location, $window) {
         $scope.liked = false;
-        $scope.likedItems;
+        $scope.likedItems = [];
 
         $scope.postComment = function () {
             var commentData = {
@@ -36,7 +36,8 @@ angular.module('scopeApp')
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
-                        $route.reload();
+                        
+                        //$window.location.reload();
                     }, function (error) {
                         console.log(error);
                     });
@@ -46,20 +47,20 @@ angular.module('scopeApp')
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
-                        $route.reload();
+                        $location.reload();
                     }, function (error) {
                         console.log(error);
                     });
             }
         };
-    
+
         AjaxFactory.getLikesByUser($localStorage.userId)
             .then(function (success) {
                 $scope.likedItems = success.data;
-                for (var item in likedItems) {
-                    console.log("liked: " + likedItems[item].fileId);
+                for (var item in $scope.likedItems) {
+                    console.log("liked: " + $scope.likedItems[item].fileId);
                     console.log($stateParams.fileId);
-                    if ($stateParams.fileId == likedItems[item].fileId) {
+                    if ($stateParams.fileId == $scope.likedItems[item].fileId) {
                         $scope.liked = true;
                         console.log($scope.liked);
                     }
