@@ -3,6 +3,7 @@
 angular.module('scopeApp')
     .controller('CommentController', function ($scope, $localStorage, AjaxFactory, $stateParams, $location, $route) {
         $scope.liked = false;
+        $scope.likedItems;
 
         $scope.postComment = function () {
             var commentData = {
@@ -54,7 +55,7 @@ angular.module('scopeApp')
     
         AjaxFactory.getLikesByUser($localStorage.userId)
             .then(function (success) {
-                var likedItems = success.data;
+                $scope.likedItems = success.data;
                 for (var item in likedItems) {
                     console.log("liked: " + likedItems[item].fileId);
                     console.log($stateParams.fileId);

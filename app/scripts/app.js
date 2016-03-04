@@ -53,7 +53,7 @@ angular
             })
             .state('profile', {
                 parent: 'navbar',
-                url: '/profile/:userId',
+                url: '/profile/',
                 templateUrl: 'views/profile.html',
                 controller: "MediaController"
 

@@ -14,9 +14,9 @@
             <li><a href="videos.html"><i class="fa fa-folder-open"></i>Videos</a></li>
             <li><a href="audio.html"><i class="fa fa-cogs"></i>Audio</a></li>
             <li><a href="register.html"><i class="fa fa-pencil"></i>Register</a></li>
-            <div>
-                <h4>Login</h4>
-                <form id="loginForm" ng-submit="login()" class="modal-form" ng-controller="UserController">
+            <div id="login" ng-controller="UserController">
+                <form id="loginForm" ng-hide="loggedIn" ng-submit="login()" class="modal-form">
+                    <h4>Login</h4>
                     <span>
                         <input class="modal-form__input" type="text" placeholder="Username" name="usernameLogin" ng-model="loginUsername">
                         <label for="username"></label>
@@ -28,6 +28,8 @@
                     <p class="modal-form__text" ng-show="wrongLogin">Wrong username or password</p>
                     <button type="submit">Log in</button>
                 </form>
+                <p ng-show="loggedIn">You're logged in as {{ username }}</p>
+                <button ng-click="logout()" ng-show="loggedIn">Logout</button>
             </div>
         </ul>
     </nav>
