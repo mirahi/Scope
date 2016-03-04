@@ -131,7 +131,24 @@ body#page-register {
     margin-top: 20%;
 }
 
-.grid-sizer{
-    columnWidth: 80;
+.grid-item{
+    width: 25%;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 10px;
+//    margin-bottom: 10px;
+//    columnWidth: 100px;
     
+}
+.grid {
+  background: #EEE;
+  /* center */
+  margin: 0 auto;
+}
+
+/* clearfix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
 }

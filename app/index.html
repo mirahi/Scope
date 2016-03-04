@@ -38,9 +38,7 @@
 
             <upload-modal></upload-modal>
             <header-nav></header-nav>
-<div>
-            
-    </div>
+
             <!-- Site content -->
             <ui-view></ui-view>
 
@@ -52,7 +50,18 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery-bridget/jquery-bridget.js"></script>
+    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
+    <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
+    <script src="bower_components/fizzy-ui-utils/utils.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/masonry/masonry.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+
     <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
     <script src="bower_components/angular-animate/angular-animate.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -61,32 +70,22 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-    <script src="bower_components/get-size/get-size.js"></script>
-    <script src="bower_components/ev-emitter/ev-emitter.js"></script>
-    <script src="bower_components/desandro-matches-selector/matches-selector.js"></script>
-    <script src="bower_components/fizzy-ui-utils/utils.js"></script>
-    <script src="bower_components/outlayer/outlayer.js"></script>
-    <script src="bower_components/outlayer/item.js"></script>
-    <script src="bower_components/masonry/masonry.js"></script>
-    <script src="bower_components/masonry/dist/masonry.pkgd.min.js"></script>
-    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
-    <script src="bower_components/jquery-bridget/jquery-bridget.js"></script>
-    <script src="bower_components/angular-masonry/angular-masonry.js"></script>
+
+
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wavesurfer.js/1.0.57/wavesurfer.min.js"></script>
-    
+
     <!-- controllers -->
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/uploadController.js"></script>
     <script src="scripts/controllers/mediaController.js"></script>
     <script src="scripts/controllers/detailController.js"></script>
-<!--    <script src="scripts/controllers/gridImageController.js"></script>-->
     <script src="scripts/controllers/imageEditorController.js"></script>
-    
+
     <!-- directives -->
     <script src="scripts/directives/uploadModal.js"></script>
     <script src="scripts/directives/menuContainer.js"></script>
@@ -94,7 +93,6 @@
     <script src="scripts/directives/gridImages.js"></script>
     <script src="scripts/directives/gridVideos.js"></script>
     <script src="scripts/directives/audioWave.js"></script>
-<!--    <script src="scripts/directives/directive.js"></script>-->
 
     <!-- filters -->
     <script src="scripts/filters/urlFilter.js"></script>
@@ -103,7 +101,7 @@
     <script src="scripts/services/ajaxFactory.js"></script>
 
     <!-- endbuild -->
-    
+
 </body>
 
 </html>

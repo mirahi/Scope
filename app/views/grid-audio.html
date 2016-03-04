@@ -1,6 +1,23 @@
+
+
+<div>
+<div masonry>
+     <div class="masonry-brick"  ng-repeat="audio in audios |filter: keyword ">
+            <a ng-href="#/detail/{{audio.fileId}}">
+                <div>
+                    <img src="http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Devices-media-optical-audio-icon.png" alt="Error">
+                </div>
+            </a>
+         <h3>{{audio.title}}</h3>
+        </div>
+
+</div>
+</div>
+
+<!--
 <div class="row">
     <div class="thumbnail-audio col-xs-12 col-md-4 col-lg-3" ng-repeat="audio in audios |filter: keyword">
-        <!--        <a ng-href="{{ audio.path | trustUrl }}">-->
+                
         <a ng-href="#/detail/{{audio.fileId}}">
 
             <audio controls="controls" ng-src="{{ audio.path | trustUrl }}" class="img">
@@ -10,4 +27,4 @@
         <i class="fa fa-heart-o"></i>
         <i class="fa fa-comment-o"></i>
     </div>
-</div>
+</div>-->

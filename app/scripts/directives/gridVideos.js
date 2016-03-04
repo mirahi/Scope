@@ -5,6 +5,10 @@ angular.module('scopeApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/grid-videos.html'
+            templateUrl: 'views/grid-videos.html',
+            controller: function(){
+            
+        },
+            controllerAs: 'video'
         };
     });
