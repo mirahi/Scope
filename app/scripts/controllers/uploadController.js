@@ -27,6 +27,7 @@ angular.module('scopeApp')
 				angular.element('#upload-form').hide();
 				angular.element('#upload-button').hide();
 				angular.element('.modal-body').append("<p>Error: Oops. Something went wront</p>");
+				window.location.reload();
 				console.log(err.data);
 			});
 		};
