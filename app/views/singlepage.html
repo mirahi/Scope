@@ -28,6 +28,22 @@
 	</span>
             <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
             <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
-
         </form>
+        
+
+
+    </div>
+    <form method="get" ng-submit="http://util.mw.metropolia.fi/uploads/{{path}}">
+<button type="submit">Download!</button>
+</form>
+    <h4>Share</h4>
+    <!-- AddToAny BEGIN -->
+<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
+<a class="a2a_button_facebook"></a>
+<a class="a2a_button_twitter"></a>
+<a class="a2a_button_google_plus"></a>
+</div>
+<script async src="https://static.addtoany.com/menu/page.js"></script>
+<!-- AddToAny END -->
     </div>

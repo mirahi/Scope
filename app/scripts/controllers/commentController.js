@@ -17,7 +17,8 @@ angular.module('scopeApp')
                 .then(function (success) {
                     console.log(success.data);
                     $location.url($location.path());
-                    $route.reload();
+                    $window.location.reload();
+
                 }, function (error) {
                     console.log(error.data);
                 });
@@ -36,8 +37,8 @@ angular.module('scopeApp')
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
-                        
-                        //$window.location.reload();
+
+                        $window.location.reload();
                     }, function (error) {
                         console.log(error);
                     });
@@ -47,7 +48,7 @@ angular.module('scopeApp')
                     .then(function (success) {
                         console.log(success.data);
                         $location.url($location.path());
-                        $location.reload();
+                        $window.location.reload();
                     }, function (error) {
                         console.log(error);
                     });
@@ -56,11 +57,11 @@ angular.module('scopeApp')
 
         AjaxFactory.getLikesByUser($localStorage.userId)
             .then(function (success) {
-                $scope.likedItems = success.data;
+                var likedItems = success.data;
                 for (var item in $scope.likedItems) {
-                    console.log("liked: " + $scope.likedItems[item].fileId);
+                    console.log("liked: " + likedItems[item].fileId);
                     console.log($stateParams.fileId);
-                    if ($stateParams.fileId == $scope.likedItems[item].fileId) {
+                    if ($stateParams.fileId == likedItems[item].fileId) {
                         $scope.liked = true;
                         console.log($scope.liked);
                     }

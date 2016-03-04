@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .controller('UserController', function ($scope, AjaxFactory, $localStorage, $window) {
 
@@ -9,10 +11,10 @@ angular.module('scopeApp')
             $scope.userId = $localStorage.userId;
         }
 
-        var doLogin = function (response) {
+       /* var doLogin = function (response) {
             MediaService.setVariable('userData', response.data);
             $location.path('/myFiles').replace();
-        };
+        };*/
 
         //Login
         $scope.wrongLogin = false;
@@ -49,19 +51,19 @@ angular.module('scopeApp')
             $window.location.reload();
             // $location.path();
             // $location.path('/hot');
-        }
+        };
 
 
         $scope.register = function () {
 
-            var data = {
+          /*  var data = {
                 username: $scope.uname,
                 password: $scope.pwd,
                 email: $scope.email
             };
 
-            var request = AjaxFactory.register(data);
+            //var request = AjaxFactory.register(data);
 
-            request.then(doLogin, MediaService.handleError);
+           /* request.then(doLogin, MediaService.handleError);*/
         };
     });
