@@ -5,6 +5,10 @@ angular.module('scopeApp')
         return {
             replace: true,
             restrict: 'E',
-            templateUrl: 'views/grid-images.html'
-        }
+            templateUrl: 'views/grid-images.html',
+             controller: function(){
+             
+         },
+             controllerAs: 'image'
+        
     });

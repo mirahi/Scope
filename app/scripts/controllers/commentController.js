@@ -20,6 +20,8 @@ angular.module('scopeApp')
                 }, function (error) {
                     console.log(error.data);
                 });
+            
+            location.reload();
         };
     
         AjaxFactory.getItemComments($stateParams.fileId)

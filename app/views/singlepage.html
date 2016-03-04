@@ -32,17 +32,44 @@
 
         <!--Video-->
         <div class="row" ng-if="isVideo">
-            <video controls width="800" height="600" ng-src="{{path}}">
-            </video>
+            <div class="col-xs-12">
+                <video controls width="800" height="600" ng-src="{{path}}">
+                </video>
+            </div>
+            <div id="info" class="col-xs-12">
+                <h1> {{title}}</h1>
+                <p> {{description}} </p>
+                <table class="table">
+                    <tr>
+                        <td>User</td>
+                        <td>{{ user }}</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>{{ time }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ type }}</td>
+                    </tr>
+                    <tr>
+                        <td>Asd</td>
+                        <td>pasd</td>
+                    </tr>
+                </table>
+            </div>
 
         </div>
 
         <!--Audio-->
-        <div class="row" ng-if="isAudio" style="text-align: center">
-
-            <ng-wavesurfer url="{{path}}" wave-color="#337ab7" progress-color="#23527c" height="64"></ng-wavesurfer>
-            <div class="col-sm-2">
-                <button class="btn btn-outlined btn-success btn-block" ng-click="wavesurfer.playPause()">
+        <div class="row" ng-if="isAudio">
+            <div class="col-xs-12">
+                <div id="detail-audio-container">
+                    <ng-wavesurfer url="{{path}}" wave-color="#20c1a9" progress-color="#1ea893" height="115"></ng-wavesurfer>
+                </div>
+            </div>
+            <div id="surf-controls" class="col-xs-12">
+                <button class="btn btn-outlined-full btn-success btn-block" ng-click="wavesurfer.playPause()">
                     <span id="play" ng-show="paused">
                     <i class="glyphicon glyphicon-play"></i>Play
                 </span>
@@ -51,16 +78,38 @@
                 </span>
                 </button>
             </div>
+            <div id="info" class="col-xs-12">
+                <h1> {{title}}</h1>
+                <p> {{description}} </p>
+                <table class="table">
+                    <tr>
+                        <td>User</td>
+                        <td>{{ user }}</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>{{ time }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ type }}</td>
+                    </tr>
+                    <tr>
+                        <td>Asd</td>
+                        <td>pasd</td>
+                    </tr>
+                </table>
+            </div>
         </div>
 
         <!-- Comments -->
-        <div class="row" ng-controller="CommentController">
-            <div class="comment col-xs-12 col-sm-offset-1 col-sm-10" ng-repeat="comment in itemComments">
+        <div id="container-comment" class="row" ng-controller="CommentController">
+            <div class="comment col-xs-12" ng-repeat="comment in itemComments">
                 <h4>{{ comment.username }}</h4>
                 <p>{{ comment.comment }}</p>
                 <h5>{{ comment.time }}</h5>
             </div>
-            <div class="col-xs-12 col-sm-offset-1 col-sm-10 comment-form-container">
+            <div class="col-xs-12 comment-form-container">
                 <form id="comment-form" class="form-inline" ng-submit="postComment()" ng-controller="CommentController">
                     <div class="comment-field input-group">
                         <input type="text" class="form-control" name="comment" ng-model="comment">
