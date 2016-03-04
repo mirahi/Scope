@@ -1,0 +1,19 @@
+<div>
+    <h4>Login</h4>
+    <form ng-submit="login()" class="modal-form">
+        <span>
+                        <input class="modal-form__input" type="text" placeholder="Username" name="usernameLogin" ng-model="loginUsername">
+                        <label for="username"></label>
+                    </span>
+        <span>
+                        <input class="modal-form__input" type="password" placeholder="Password" name="passwordLogin" ng-model="loginPassword">
+                        <label for="password"></label>
+                    </span>
+        <p class="modal-form__text" ng-show="wrongLogin">Wrong username or password</p>
+        <span>
+                        <input type="checkbox" label="Remember Me" name="rememberMe">
+                        <label for="rememberMe">Remember Me</label>
+                    </span>
+        <button type="submit">Log in</button>
+    </form>
+</div>

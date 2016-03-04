@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="container-img col-xs-12 col-sm-6 col-md-4" ng-repeat="image in images">
+        <figure class="thumbnail-img">
+            <a ng-href="#/detail/{{image.fileId}}">
+                <div class="container-image" ng-attr-style="background-image: url('{{ image.thumbNails.medium | trustUrl }}');"></div>
+                <figcaption class="caption">
+                    <h3>{{ image.title }}</h3>
+                    <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-comment-o"></i>
+                </figcaption>
+            </a>
+        </figure>
+    </div>
+</div>

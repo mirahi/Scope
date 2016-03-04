@@ -1,0 +1,36 @@
+<aside class="menu-container">
+
+    <div class="menu-heading clearfix">
+        <label for="offcanvas-menu" class="close-btn">
+            <i class="fa fa-times"></i>
+        </label>
+    </div>
+    <!--end menu-heading-->
+
+    <nav class="slide-menu">
+        <ul>
+            <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
+            <li><a href="images.html"><i class="fa fa-star"></i>Images</a></li>
+            <li><a href="videos.html"><i class="fa fa-folder-open"></i>Videos</a></li>
+            <li><a href="audio.html"><i class="fa fa-cogs"></i>Audio</a></li>
+            <li><a href="register.html"><i class="fa fa-pencil"></i>Register</a></li>
+            <div>
+                <h4>Login</h4>
+                <form id="loginForm" ng-submit="login()" class="modal-form" ng-controller="UserController">
+                    <span>
+                        <input class="modal-form__input" type="text" placeholder="Username" name="usernameLogin" ng-model="loginUsername">
+                        <label for="username"></label>
+                    </span>
+                    <span>
+                        <input class="modal-form__input" type="password" placeholder="Password" name="passwordLogin" ng-model="loginPassword">
+                        <label for="password"></label>
+                    </span>
+                    <p class="modal-form__text" ng-show="wrongLogin">Wrong username or password</p>
+                    <button type="submit">Log in</button>
+                </form>
+            </div>
+        </ul>
+    </nav>
+    <!--end slide-menu -->
+
+</aside>
