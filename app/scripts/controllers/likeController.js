@@ -9,7 +9,7 @@ angular.module('scopeApp')
         AjaxFactory.getLikesByUser($localStorage.userId)
             .then(function (success) {
                 $scope.likedItems = success.data;
-                for (var item in likedItems) {
+                for (var item in $scope.likedItems) {
                     console.log("liked: " + $scope.likedItems[item].fileId);
                     console.log($stateParams.fileId);
                     if ($stateParams.fileId == $scope.likedItems[item].fileId) {
