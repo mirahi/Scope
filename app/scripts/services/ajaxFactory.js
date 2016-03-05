@@ -1,3 +1,4 @@
+'use strict';
 angular.module('scopeApp')
     .factory('AjaxFactory', function ($http, $httpParamSerializer) {
         var baseUrl = 'http://util.mw.metropolia.fi/ImageRekt/api/v2/';
@@ -40,17 +41,29 @@ angular.module('scopeApp')
             return $http.get(baseUrl + 'file/' + fileId);
         };
 
-        ajaxFunctions.postComment = function(form, fileId) {
+        ajaxFunctions.postComment = function (form, fileId) {
             console.log(fileId + $httpParamSerializer(form));
             return $http.post(baseUrl + 'comment/file/' + fileId, $httpParamSerializer(form), {
                 headers: {
-                   'Content-Type': 'application/x-www-form-urlencoded'
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 }
             });
         };
-    
+
         ajaxFunctions.getItemComments = function (fileId) {
             return $http.get(baseUrl + 'comments/file/' + fileId);
+        };
+    
+        ajaxFunctions.likeItem = function (fileId, userId) {
+            return $http.get(baseUrl + 'like/' + fileId + '/' + userId);
+        };
+
+        ajaxFunctions.unlikeItem = function (fileId, userId) {
+            return $http.get(baseUrl + 'unlike/' + fileId + '/' + userId);
+        };
+    
+        ajaxFunctions.getLikesByUser = function (userId) {
+            return $http.get(baseUrl + 'likes/user/' + userId);
         };
 
         return ajaxFunctions;

@@ -1,6 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:300);
 
 $script: 'Pacifico', cursive;
+$sans: 'Work Sans', sans-serif;
+
+.logo {
+    font-family: $script;
+}
 
 .navbar-logo {
     
@@ -11,15 +17,22 @@ $script: 'Pacifico', cursive;
         font-family: $script;
         color: $green;
         text-decoration: none;
+        -webkit-transition: all 0.3s;
+        -moz-transition: all 0.3s;
+            transition: all 0.3s;
     }
     
      a:hover,
      a:active {
-         color: $darkgreen;
+         color: $lightgreen;
          text-decoration: none;
      }
 }
 
 p {
     font-size: 1.7rem;
+}
+
+p, h1, h2, h3, h4, h5, h6, table, tr, td {
+    font-family: $sans;
 }

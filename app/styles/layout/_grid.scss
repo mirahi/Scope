@@ -1,28 +1,34 @@
-#container-media {
-    max-width: 1450px;
-}
-
-.container-img {
-    margin-bottom: 10px;
-}
-
-.caption {
-    font-size: 2rem;
-    padding: 5px;
+// IMAGES
+.container-thumbnail {
+    padding:5px;
+    
+    a:hover,
+    a:active {
+        .thumbnail-img {
+            opacity: 1;
+        }
+    }
+    
+    figcaption {
+        background-color: $darkgrey;
+        padding: 5px;
+        
+        .fa {
+            font-size: 3rem;
+        }
+    }
 }
 
 .thumbnail-img {
-    background-color: white;
+    background-color: black;
     width: 100%;
     height: 100%;
-    margin: 5px;
+    opacity: 0.7;
     
-    a,
-    a:hover,
-    .fa,
-    .fa:hover {
-        text-decoration: none;
+    img {
+        width: 100%;
     }
+    
 }
 
 .thumbnail-video {
@@ -34,7 +40,6 @@
     background-color: white;
     margin: 3px;
     padding: 5px;
-    min-height: 150px;
     
     i {
         font-size: 15rem;
@@ -58,7 +63,19 @@
     width: 100%;
     height: 100%;
     background-size: cover;
-    min-height: 250px;
+    background-position: center;
+    
+    opacity: 0.75;
+    
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+            transition: all 0.3s;
+    
+    .container-image:hover,
+    .container-image:active {
+        opacity: 1;
+    }
+    
 }
 
 /* Extra small devices (phones, less than 768px) */
@@ -67,20 +84,20 @@
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
     .container-image {
-        min-height: 400px;
+        
     }
 }
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .container-image {
-        min-height: 320px;
+        
     }
 }
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1400px) {
     .container-image {
-        min-height: 320px;
+        
     }
 }

@@ -9,7 +9,8 @@ angular
     'ngSanitize',
     'ngStorage',
     'ngTouch',
-    'ui.router'
+    'ui.router',
+    'wu.masonry'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
@@ -58,5 +59,12 @@ angular
         controller:"RegisterController"
         
     })
+    .state('profile', {
+                parent: 'navbar',
+                url: '/profile/:userId',
+                templateUrl: 'views/profile.html',
+                controller: "MediaController"
+
+            });
     ;
   });

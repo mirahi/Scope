@@ -72,7 +72,7 @@ angular.module('scopeApp')
                     var img = new Image();
                     img.onload = function () {
                         $("#size").append(this.width + " x " + this.height);
-                    }
+                    };
                     img.src = "http://util.mw.metropolia.fi/uploads/" + $scope.path;
 
                 }
