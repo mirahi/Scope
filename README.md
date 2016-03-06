@@ -8,6 +8,3 @@
  
  The project is implemented using HTML, SCSS, AngularJS and Bootstrap.
 
-##Screenshots
-
-##Code Exmples
