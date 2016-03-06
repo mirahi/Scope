@@ -1,6 +1,6 @@
-##$scope  
+#$scope  
 
-#Synopsis
+##Synopsis
  
  University project by team $scope
  
@@ -8,6 +8,6 @@
  
  The project is implemented using HTML, SCSS, AngularJS and Bootstrap.
 
-#Code examples
- 
-#Screenshots
+##Screenshots
+
+##Code Exmples
