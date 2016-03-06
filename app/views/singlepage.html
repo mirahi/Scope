@@ -1,34 +1,15 @@
 <main class="container-fluid">
 
     <!--Image-->
-    <div class="row" ng-if="isImage">
-        <div id="detail-img-container" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-7 col-lg-offset-2 col-lg-6">
-            <img id="detail-img" class="" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
-        </div>
-        <div id="info" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 col-lg-3">
-            <h1> {{title}}</h1>
-            <p> {{description}} </p>
-            <table class="table">
-                <tr>
-                    <td>User</td>
-                    <td>{{ user }}</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td>{{ time }}</td>
-                </tr>
-                <tr>
-                    <td>Type</td>
-                    <td>{{ type }}</td>
-                </tr>
-                <tr>
-                    <td>Dimensions</td>
-                    <td id="size"></td>
-                </tr>
-            </table>
-            <a href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
-            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
-            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
+    <div class="container" ng-if="isImage">
+        <div class="row">
+            <div id="detail-img-container" class="col-xs-12">
+                <img id="detail-img" class="" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
+
+                <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
+                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
+                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
+            </div>
         </div>
     </div>
 
@@ -65,22 +46,32 @@
 
     <!--Audio-->
     <div class="row" ng-if="isAudio">
-        <div class="col-xs-12">
+        <div class="container-fluid">
             <div id="detail-audio-container">
                 <ng-wavesurfer url="{{path}}" wave-color="#20c1a9" progress-color="#1ea893" height="115"></ng-wavesurfer>
             </div>
         </div>
-        <div id="surf-controls" class="col-xs-12">
-            <button class="btn btn-outlined-full btn-success btn-block" ng-click="wavesurfer.playPause()">
-                <span id="play" ng-show="paused">
-                    <i class="glyphicon glyphicon-play"></i>Play
-                </span>
-                <span id="pause" ng-show="!paused">
-                    <i class="glyphicon glyphicon-pause"></i>Pause
-                </span>
-            </button>
+        <div class="container">
+            <div class="row">
+                <div id="surf-controls" class="col-xs-12">
+                    <button class="btn btn-outlined-full btn-success" ng-click="wavesurfer.playPause()">
+                        <span id="play" ng-show="paused">
+                            <i class="glyphicon glyphicon-play"></i>Play
+                        </span>
+                        <span id="pause" ng-show="!paused">
+                            <i class="glyphicon glyphicon-pause"></i>Pause
+                        </span>
+                    </button>
+                </div>
+            </div>
         </div>
-        <div id="info" class="col-xs-12">
+    </div>
+
+    <!-- INFO -->
+
+    <div class="container">
+
+        <div id="info" class="col-xs-12 col-md-4">
             <h1> {{title}}</h1>
             <p> {{description}} </p>
             <table class="table">
@@ -97,16 +88,15 @@
                     <td>{{ type }}</td>
                 </tr>
                 <tr>
-                    <td>Asd</td>
-                    <td>pasd</td>
+                    <td>Dimensions</td>
+                    <td id="size"></td>
                 </tr>
             </table>
-        </div>
-    </div>
 
-    <!-- Comments -->
-    <div class="row">
-        <div id="container-comment" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-7 col-lg-offset-2 col-lg-6" ng-controller="CommentController">
+        </div>
+
+        <!-- COMMENTS -->
+        <div id="container-comment" class="col-xs-12 col-md-8" ng-controller="CommentController">
             <div class="comment col-xs-12" ng-repeat="comment in itemComments">
                 <h4><a href="#">{{ comment.username }}</a></h4>
                 <p>{{ comment.comment }}</p>
