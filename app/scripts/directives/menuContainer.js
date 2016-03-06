@@ -6,5 +6,5 @@ angular.module('scopeApp')
             replace: true,
             restrict: 'E',
             templateUrl: 'views/menu-container.html'
-        }
+        };
     });

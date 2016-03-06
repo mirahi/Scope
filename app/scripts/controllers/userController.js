@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .controller('UserController', function ($scope, AjaxFactory, $localStorage, $window) {
 

@@ -1,5 +1,45 @@
+<div class="jumbotron">
+    <br>
+    <h1 class="logo">Scope</h1>
+    <h2>Share your media.</h2>
+    <br>
+    <button class="btn btn-outlined btn-white">Log in</button>
+    <br>
+    <br>
+    <p>Not a member? <a ui-sref="register">Create an account.</a></p>
+</div>
+
 <main>
-    <div id="container-media" class="container">
-        <grid-images></grid-images>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-12 col-sm-4 home-block-container">
+                <a ui-sref="images">
+                    <div class="home-block">
+                        <i class="fa fa-image"></i>
+                        <p>Images</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 home-block-container">
+                <a ui-sref="videos">
+                    <div class="home-block">
+                        <i class="fa fa-youtube-play"></i>
+                        <p>Videos</p>
+                    </div>
+                </a>
+            </div>
+
+            <div class="col-xs-12 col-sm-4 home-block-container">
+                <a ui-sref="audio">
+                    <div class="home-block">
+                        <i class="fa fa-music"></i>
+                        <p>Audio</p>
+                    </div>
+                </a>
+            </div>
+
+        </div>
     </div>
+
 </main>

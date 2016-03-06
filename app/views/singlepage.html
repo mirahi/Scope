@@ -1,30 +1,128 @@
-<div class="container">
-    <!-- Image	-->
-    <div class="container">
+<main class="container-fluid">
 
-        <img class="img-padding img-responsive center-block" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
+    <!--Image-->
+    <div class="row" ng-if="isImage">
+        <div id="detail-img-container" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-7 col-lg-offset-2 col-lg-6">
+            <img id="detail-img" class="" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
+        </div>
+        <div id="info" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-0 col-md-4 col-lg-3">
+            <h1> {{title}}</h1>
+            <p> {{description}} </p>
+            <table class="table">
+                <tr>
+                    <td>User</td>
+                    <td>{{ user }}</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>{{ time }}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>{{ type }}</td>
+                </tr>
+                <tr>
+                    <td>Dimensions</td>
+                    <td id="size"></td>
+                </tr>
+            </table>
+            <a href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
+            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
+            <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
+        </div>
     </div>
 
-    <!--end content body-->
-
-
-    <!--    </section>-->
-    <!--end content-->
-    <div ng-controller="CommentController">
-        <div ng-repeat="comment in itemComments">
-            <h4>{{ comment.username }}</h4>
-            <p>{{ comment.comment }}</p>
+    <!--Video-->
+    <div class="row" ng-if="isVideo">
+        <div class="col-xs-12">
+            <video controls width="800" height="600" ng-src="{{path}}">
+            </video>
+        </div>
+        <div id="info" class="col-xs-12">
+            <h1> {{title}}</h1>
+            <p> {{description}} </p>
+            <table class="table">
+                <tr>
+                    <td>User</td>
+                    <td>{{ user }}</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>{{ time }}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>{{ type }}</td>
+                </tr>
+                <tr>
+                    <td>Asd</td>
+                    <td>pasd</td>
+                </tr>
+            </table>
         </div>
 
-
-        <form id="comment-form" ng-submit="postComment()" ng-controller="CommentController">
-            <span>
-                        <input type="text" placeholder="Comment" name="comment" ng-model="comment">
-                        <label for="comment"></label>
-                    </span>
-            <span>
-		<input type="submit" name="submit" value="Add Comment">
-	</span>
-
-        </form>
     </div>
+
+    <!--Audio-->
+    <div class="row" ng-if="isAudio">
+        <div class="col-xs-12">
+            <div id="detail-audio-container">
+                <ng-wavesurfer url="{{path}}" wave-color="#20c1a9" progress-color="#1ea893" height="115"></ng-wavesurfer>
+            </div>
+        </div>
+        <div id="surf-controls" class="col-xs-12">
+            <button class="btn btn-outlined-full btn-success btn-block" ng-click="wavesurfer.playPause()">
+                <span id="play" ng-show="paused">
+                    <i class="glyphicon glyphicon-play"></i>Play
+                </span>
+                <span id="pause" ng-show="!paused">
+                    <i class="glyphicon glyphicon-pause"></i>Pause
+                </span>
+            </button>
+        </div>
+        <div id="info" class="col-xs-12">
+            <h1> {{title}}</h1>
+            <p> {{description}} </p>
+            <table class="table">
+                <tr>
+                    <td>User</td>
+                    <td>{{ user }}</td>
+                </tr>
+                <tr>
+                    <td>Time</td>
+                    <td>{{ time }}</td>
+                </tr>
+                <tr>
+                    <td>Type</td>
+                    <td>{{ type }}</td>
+                </tr>
+                <tr>
+                    <td>Asd</td>
+                    <td>pasd</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Comments -->
+    <div class="row">
+        <div id="container-comment" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-1 col-md-7 col-lg-offset-2 col-lg-6" ng-controller="CommentController">
+            <div class="comment col-xs-12" ng-repeat="comment in itemComments">
+                <h4><a href="#">{{ comment.username }}</a></h4>
+                <p>{{ comment.comment }}</p>
+                <h5>{{ comment.time }}</h5>
+            </div>
+            <div class="col-xs-12 comment-form-container">
+                <form id="comment-form" class="form-inline" ng-submit="postComment()" ng-controller="CommentController">
+                    <div class="comment-field input-group">
+                        <input type="text" class="form-control" name="comment" ng-model="comment">
+                        <span class="input-group-btn">
+                        <button class="btn btn-outlined btn-success" type="submit" name="submit" value="Add Comment">Comment</button>
+                    </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</main>

@@ -9,6 +9,11 @@
 	width: 100%; /*full screen width*/
 	height: 100%; /*full screen height*/
 	overflow-x: hidden; /*no horizontal scroll bar*/
+    
+    .fa {
+        font-size: 3rem;
+        margin-right: 15px;
+    }
 }
 
 a
@@ -34,9 +39,9 @@ body
 .page-content
 {
 	width: 100%;
-    max-width: 1200px; 
+//    max-width: 1200px; 
 	margin: 0 auto;
-    padding: 0 1.5rem; 
+    padding: 0; 
     line-height: 1.5;
 }
 

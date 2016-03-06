@@ -1,3 +1,5 @@
+'use strict';
+
 angular.module('scopeApp')
     .filter("trustUrl", function ($sce) {
     return function (filePath) {

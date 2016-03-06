@@ -1,5 +1,6 @@
-$(document).ready(function () {
+'use strict';
 
+$(document).ready(function () {
 
 	$("#show-more-button").click(function (e) {
 		e.preventDefault();
@@ -9,7 +10,6 @@ $(document).ready(function () {
 
 	});
 
-
 	$("#upload_button").click(function (e) {
 		console.log("click");
 		$('#upload_container').show();
@@ -18,9 +18,6 @@ $(document).ready(function () {
 		$('#search_button').hide();
 
 	});
-
-
-
 
 	$("#search_button").click(function (e) {
 		console.log("click");

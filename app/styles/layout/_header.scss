@@ -1,15 +1,6 @@
-.navbar-logo {
-    
-    margin: 0px 50px;
-    
-     a:hover,
-     a:active {   
-        @extend .logo;
-         text-decoration: none;
-     }
-}
-
 .navbar-default {
-    background-color: $midgrey;
+    background-color: $darkgrey;
     border: none;
 }
+
+#search-form { display: none; }

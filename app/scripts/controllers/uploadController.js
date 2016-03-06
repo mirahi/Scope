@@ -6,7 +6,6 @@ angular.module('scopeApp')
         $scope.setMediaFile = function (element) {
             $scope.mimeType = element.files[0].type;
             $scope.type = $scope.mimeType.substr(0, 5);
-             console.log("asdpasd666   " + $scope.type);
         };
 
         $scope.postFile = function () {
