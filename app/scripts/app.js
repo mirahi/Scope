@@ -9,8 +9,7 @@ angular
     'ngSanitize',
     'ngStorage',
     'ngTouch',
-    'ui.router',
-    'wu.masonry'
+    'ui.router'
   ])
   .config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
