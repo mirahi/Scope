@@ -1,0 +1,49 @@
+.comment {
+    background-color: $darkgrey;
+    border-bottom: 1px solid $lightgrey;
+    
+    h4 {
+        font-size: 1.4rem;
+        color: $green;
+    }
+}
+.comment-form-container {
+    padding: 0;
+}
+.comment-field {
+    width: 100%;
+}
+.input-group-btn {
+    width: 1% !important;
+}
+
+table {
+    font-size: 2rem;
+}
+
+#detail-img-container {
+    background-color: $light;
+    padding: 10px;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+    img {
+        width: 100%;
+    }
+    
+}
+#detail-audio-container {
+    background-color: white;
+    padding: 30px 0;
+}
+canvas {
+    width: 100%;
+}
+
+#info {
+    float: right;
+    
+    h1, p {
+        text-align: center;
+    }
+}
