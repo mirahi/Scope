@@ -4,6 +4,8 @@
     <div class="container" ng-if="isImage">
         <div class="row">
             <div id="detail-img-container" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                <h1> {{title}}</h1>
+                <p> {{description}} </p>
                 <img id="detail-img" class="" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
 
                 <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>Download</a>
@@ -17,6 +19,8 @@
     <div class="container">
         <div class="row" ng-if="isVideo">
             <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                <h1> {{title}}</h1>
+                <p> {{description}} </p>
                 <video controls width="100%" ng-src="{{path}}">
                 </video>
                 <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
@@ -29,12 +33,14 @@
     <div class="row" ng-if="isAudio">
         <div class="container-fluid">
             <div id="detail-audio-container">
+                <h1 style="text-align: center;"> {{title}}</h1>
+                <p style="text-align: center;"> {{description}} </p>
                 <ng-wavesurfer url="{{path}}" wave-color="#20c1a9" progress-color="#1ea893" height="115"></ng-wavesurfer>
             </div>
         </div>
         <div class="container">
             <div class="row">
-                <div id="surf-controls" class="col-xs-12">
+                <div id="surf-controls" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
                     <button class="btn btn-outlined-full btn-success" ng-click="wavesurfer.playPause()">
                         <span id="play" ng-show="paused">
                             <i class="glyphicon glyphicon-play"></i>Play
@@ -54,10 +60,50 @@
 
     <div class="container">
         <div class="row">
-
+            <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                <br>
+                <!-- Twitter -->
+                <script language="javascript">
+                    function twitterShareCurrentPage() {
+            window.open("http://twitter.com/home?status=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+                </script>
+                <a href="javascript:twitterShareCurrentPage()" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+                <!-- Facebook -->
+                <script language="javascript">
+                    function fbShareCurrentPage() {
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+                </script>
+                <a href="javascript:fbShareCurrentPage()" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+                <!-- Google+ -->
+                <script language="javascript">
+                    function googleShareCurrentPage() {
+            window.open("https://plus.google.com/share?url=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+                </script>
+                <a href="javascript:googleShareCurrentPage()" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+                <!-- StumbleUpon -->
+                <script language="javascript">
+                    function stumbleUponShareCurrentPage() {
+            window.open("http://www.stumbleupon.com/submit?url=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+                </script>
+                <a href="javascript:stumbleUponShareCurrentPage()" title="Share on StumbleUpon" target="_blank" data-placement="top" class="btn btn-stumbleupon"><i class="fa fa-stumbleupon"></i> Stumbleupon</a>
+                <!-- LinkedIn -->
+                <script language="javascript">
+                    function linkedinShareCurrentPage() {
+            window.open("http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+                </script>
+                <a href="javascript:linkedinShareCurrentPage()" title="Share on LinkedIn" target="_blank" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
+            </div>
             <div id="info" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
-                <h1> {{title}}</h1>
-                <p> {{description}} </p>
                 <table class="table">
                     <tr>
                         <td>User</td>

@@ -2,9 +2,13 @@
     background-color: $darkgrey;
     border-bottom: 1px solid $lightgrey;
     
-    h4 {
+    h4 a {
         font-size: 1.4rem;
         color: $green;
+    }
+    
+    p {
+        color: $lightgrey;
     }
 }
 .comment-form-container {
