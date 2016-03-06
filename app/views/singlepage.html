@@ -3,45 +3,26 @@
     <!--Image-->
     <div class="container" ng-if="isImage">
         <div class="row">
-            <div id="detail-img-container" class="col-xs-12">
+            <div id="detail-img-container" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
                 <img id="detail-img" class="" ng-src="http://util.mw.metropolia.fi/uploads/{{path}}" />
 
-                <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
-                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
-                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
+                <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>Download</a>
+                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController">&nbsp;</button>
+                <p id="size"></p>
             </div>
         </div>
     </div>
 
     <!--Video-->
-    <div class="row" ng-if="isVideo">
-        <div class="col-xs-12">
-            <video controls width="800" height="600" ng-src="{{path}}">
-            </video>
+    <div class="container">
+        <div class="row" ng-if="isVideo">
+            <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                <video controls width="100%" ng-src="{{path}}">
+                </video>
+                <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
+                <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController">&nbsp;</button>
+            </div>
         </div>
-        <div id="info" class="col-xs-12">
-            <h1> {{title}}</h1>
-            <p> {{description}} </p>
-            <table class="table">
-                <tr>
-                    <td>User</td>
-                    <td>{{ user }}</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td>{{ time }}</td>
-                </tr>
-                <tr>
-                    <td>Type</td>
-                    <td>{{ type }}</td>
-                </tr>
-                <tr>
-                    <td>Asd</td>
-                    <td>pasd</td>
-                </tr>
-            </table>
-        </div>
-
     </div>
 
     <!--Audio-->
@@ -62,6 +43,8 @@
                             <i class="glyphicon glyphicon-pause"></i>Pause
                         </span>
                     </button>
+                    <a class="btn btn-outlined-full btn-success" href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
+                    <button id="like-button" class="btn btn-outlined-full btn-success" ng-click="likeItem()" ng-controller="CommentController">&nbsp;</button>
                 </div>
             </div>
         </div>
@@ -70,47 +53,45 @@
     <!-- INFO -->
 
     <div class="container">
+        <div class="row">
 
-        <div id="info" class="col-xs-12 col-md-4">
-            <h1> {{title}}</h1>
-            <p> {{description}} </p>
-            <table class="table">
-                <tr>
-                    <td>User</td>
-                    <td>{{ user }}</td>
-                </tr>
-                <tr>
-                    <td>Time</td>
-                    <td>{{ time }}</td>
-                </tr>
-                <tr>
-                    <td>Type</td>
-                    <td>{{ type }}</td>
-                </tr>
-                <tr>
-                    <td>Dimensions</td>
-                    <td id="size"></td>
-                </tr>
-            </table>
+            <div id="info" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+                <h1> {{title}}</h1>
+                <p> {{description}} </p>
+                <table class="table">
+                    <tr>
+                        <td>User</td>
+                        <td>{{ user }}</td>
+                    </tr>
+                    <tr>
+                        <td>Time</td>
+                        <td>{{ time }}</td>
+                    </tr>
+                    <tr>
+                        <td>Type</td>
+                        <td>{{ type }}</td>
+                    </tr>
+                </table>
 
-        </div>
-
-        <!-- COMMENTS -->
-        <div id="container-comment" class="col-xs-12 col-md-8" ng-controller="CommentController">
-            <div class="comment col-xs-12" ng-repeat="comment in itemComments">
-                <h4><a href="#">{{ comment.username }}</a></h4>
-                <p>{{ comment.comment }}</p>
-                <h5>{{ comment.time }}</h5>
             </div>
-            <div class="col-xs-12 comment-form-container">
-                <form id="comment-form" class="form-inline" ng-submit="postComment()" ng-controller="CommentController">
-                    <div class="comment-field input-group">
-                        <input type="text" class="form-control" name="comment" ng-model="comment">
-                        <span class="input-group-btn">
+
+            <!-- COMMENTS -->
+            <div id="container-comment" class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8" ng-controller="CommentController">
+                <div class="comment col-xs-12" ng-repeat="comment in itemComments">
+                    <h4><a ng-href="#profile/{{ comment.userId }}">{{ comment.username }}</a></h4>
+                    <p>{{ comment.comment }}</p>
+                    <h5>{{ comment.time }}</h5>
+                </div>
+                <div class="col-xs-12 comment-form-container">
+                    <form id="comment-form" class="form-inline" ng-submit="postComment()" ng-controller="CommentController">
+                        <div class="comment-field input-group">
+                            <input type="text" class="form-control" name="comment" ng-model="comment">
+                            <span class="input-group-btn">
                         <button class="btn btn-outlined btn-success" type="submit" name="submit" value="Add Comment">Comment</button>
                     </span>
-                    </div>
-                </form>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

@@ -7,30 +7,16 @@
     </div>
     <!--end menu-heading-->
 
-    <nav class="slide-menu">
+    <nav class="slide-menu" ng-controller="UserController">
         <ul>
-            <li ng-show="loggedIn"><a ui-sref="register"><i class="fa fa-pencil"></i>Profile</a></li>
+            <li ng-show="loggedIn"><a ng-href="#/profile/{{userId}}"><i class="fa fa-pencil"></i>Profile</a></li>
             <li><a href="index.html"><i class="fa fa-home"></i>Home</a></li>
             <li><a ui-sref="images"><i class="fa fa-image"></i>Images</a></li>
             <li><a ui-sref="videos"><i class="fa fa-youtube-play"></i>Videos</a></li>
             <li><a ui-sref="audio"><i class="fa fa-music"></i>Audio</a></li>
-            <li><a ui-sref="#"><i class="fa fa-user"></i>Login</a></li>
-            <li><a ui-sref="register"><i class="fa fa-pencil"></i>Register</a></li>
-            <div>
-                <h4>Login</h4>
-                <form id="loginForm" ng-submit="login()" class="modal-form" ng-controller="UserController">
-                    <span>
-                        <input class="modal-form__input" type="text" placeholder="Username" name="usernameLogin" ng-model="loginUsername">
-                        <label for="username"></label>
-                    </span>
-                    <span>
-                        <input class="modal-form__input" type="password" placeholder="Password" name="passwordLogin" ng-model="loginPassword">
-                        <label for="password"></label>
-                    </span>
-                    <p class="modal-form__text" ng-show="wrongLogin">Wrong username or password</p>
-                    <button type="submit">Log in</button>
-                </form>
-            </div>
+            <li ng-hide="loggedIn" data-toggle="modal" data-target="#login-modal"><a ui-sref="#"><i class="fa fa-user"></i>Login</a></li>
+            <li ng-show="loggedIn" ng-click="logout()"><a href="#"><i class="fa fa-user"></i>Logout</a></li>
+            <li ng-hide="loggedIn"><a ui-sref="register"><i class="fa fa-pencil"></i>Register</a></li>
         </ul>
     </nav>
     <!--end slide-menu -->

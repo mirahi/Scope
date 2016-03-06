@@ -62,20 +62,6 @@
 {
 	transition: margin 0.5s ease-in-out;
 }
-/*
-.menu-container
-{
-	background: $darkgrey;
-	width: 25%;
-    min-width: 300px;
-	margin-left: -60%;
-    margin-top: -50px;
-	float: left;
-	height: 100%;
-	position: fixed;
-	z-index:1050;
-}
-*/
 .menu-container
 {
 	background: $darkgrey;
@@ -119,7 +105,6 @@
 @media (max-width: 460px) {
 	.slide-menu li a
 	{
-		font-size: 0.875rem;
 		padding-left: 12px;
 	}
 

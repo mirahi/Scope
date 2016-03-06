@@ -1,5 +1,18 @@
 #frontpage {
-    background-image: url('../../images/city.jpg');
+    .logo {
+        color: $lightgreen;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    #frontpage {
+        background-image: url('../images/city_small.png');
+    }
+}
+@media screen and (min-width: 700px) {
+    #frontpage {
+        background-image: url('../images/city.png');
+    }
 }
 
 .jumbotron {
@@ -26,6 +39,7 @@
     text-align: center;
     padding: 20px;
     margin: 10px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);
     
     -webkit-transition: all 0.3s;
        -moz-transition: all 0.3s;
@@ -57,6 +71,7 @@ a .home-block:active {
     background-color: $darkgreen;
     margin: 5px;
     height: 310px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.4);
     
     .fa,
     p {

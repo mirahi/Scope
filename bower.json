@@ -12,7 +12,12 @@
     "angular-sanitize": "^1.4.0",
     "angular-touch": "^1.4.0",
     "ngstorage": "^0.3.10",
-    "angular-ui-router": "^0.2.18"
+    "angular-ui-router": "^0.2.18",
+    "videogular": "^1.4.2",
+    "videogular-controls": "^1.4.2",
+    "videogular-buffering": "^1.4.2",
+    "videogular-poster": "^1.4.2",
+    "videogular-themes-default": "^1.4.2"
   },
   "devDependencies": {
     "angular-mocks": "^1.4.0"

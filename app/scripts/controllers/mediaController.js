@@ -1,40 +1,51 @@
 'use strict';
 
 angular.module('scopeApp')
-	.controller('MediaController', function ($scope, AjaxFactory) {
-		
-        $scope.getImages = function() {
+    .controller('MediaController', function ($scope, AjaxFactory) {
+
+        $scope.getImages = function () {
             AjaxFactory.getFiles('image')
-                .then(function(success) {
+                .then(function (success) {
                     $scope.images = success.data;
                     console.log(success.data);
-                }, function(error) {
+                }, function (error) {
                     console.log(error.data);
                 });
         };
 
-        $scope.getAudios = function() {
+        $scope.getAudios = function () {
             AjaxFactory.getFiles('audio')
-                .then(function(success) {
+                .then(function (success) {
                     $scope.audios = success.data;
                     console.log(success.data);
-                }, function(error) {
+                }, function (error) {
                     console.log(error.data);
                 });
         };
 
-        $scope.getVideos = function() {
+        $scope.getVideos = function () {
             AjaxFactory.getFiles('video')
-                .then(function(success) {
+                .then(function (success) {
                     $scope.videos = success.data;
                     console.log(success.data);
-                }, function(error) {
+                }, function (error) {
                     console.log(error.data);
                 });
         };
-        
+        $scope.getItems = function () {
+            AjaxFactory.getAllFiles()
+                .then(function (success) {
+                    $scope.items = success.data;
+                    console.log(success.data);
+                }, function (error) {
+                    console.lg(error.data);
+
+                });
+        }
+
         $scope.getImages();
         $scope.getVideos();
         $scope.getAudios();
-        
-	});
+        $scope.getItems();
+
+    });

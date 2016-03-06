@@ -15,6 +15,11 @@
         margin-right: 15px;
     }
 }
+.toggle-btn {
+    .fa {
+        font-size: 3rem;
+    }
+}
 
 a
 {
@@ -39,7 +44,6 @@ body
 .page-content
 {
 	width: 100%;
-//    max-width: 1200px; 
 	margin: 0 auto;
     padding: 0; 
     line-height: 1.5;

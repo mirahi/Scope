@@ -3,22 +3,21 @@
 $(document).ready(function () {
 
     $('.inputfile').each(function () {
-        console.log("jotain tapahtuu");
         var $input = $(this),
             $label = $input.next('label'),
             labelVal = $label.html();
 
         $input.on('change', function (e) {
             var fileName = '';
-            console.log("input change");
-            if (e.target.value)
+            if (e.target.value) {
                 fileName = e.target.value.split('\\').pop();
-
-            if (fileName)
+            }
+            if (fileName) {
                 $label.find('span').html(fileName);
-            
-            else
+            }
+            else {
                 $label.html(labelVal);
+            }
         });
 
         // Firefox bug fix

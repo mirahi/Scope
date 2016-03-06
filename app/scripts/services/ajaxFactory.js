@@ -65,6 +65,10 @@ angular.module('scopeApp')
         ajaxFunctions.getLikesByUser = function (userId) {
             return $http.get(baseUrl + 'likes/user/' + userId);
         };
+    
+        ajaxFunctions.getFilesByUser = function (userId) {
+            return $http.get(baseUrl + 'files/user/' + userId);
+        };
 
         return ajaxFunctions;
     });

@@ -1,13 +1,60 @@
-<div class="container">
+<main id="grid" class="container-fluid" ng-controller="ProfileController">
 
-    <div ng-controller="LikeController">
+    <div id="liked" class="row">
         <h4>Liked items:</h4>
-        <div ng-repeat="item in likedItems">
-            <figure class="thumbnail-img">
-                <a ng-href="#/detail/{{image.fileId}}">
-                    <div class="container-image" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');"></div>
-                    <figcaption class="caption">
-            </figure>
+        <div class="container-thumbnail col-xs-6 col-sm-4 col-lg-3" ng-repeat="item in likedItems">
+            <!-- Image -->
+            <a ng-if="item.type == 'image' " ng-href="#/detail/{{item.fileId}}">
+                <div class="thumbnail-img" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');">
+                    <img src="images/transp.png" />
+                </div>
+            </a>
+            <!-- Audio -->
+            <a ng-if="item.type == 'audio' " ng-href="#/detail/{{item.fileId}}">
+                <div class="thumbnail-audio">
+                    <img src="images/note_green.png" />
+                </div>
+            </a>
+            <!-- Video -->
+            <a ng-if="item.type == 'video' " ng-href="#/detail/{{ item.fileId }}">
+                <div class="thumbnail-video" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');">
+                    <img src="images/transp_video.png" />
+                </div>
+            </a>
+            <!-- Media title -->
+            <div class="thumbnail-info">
+                <h3>{{ item.title }}</h3>
+                <i class="fa fa-heart-o"></i>
+            </div>
         </div>
     </div>
-<div>
+    <div id="uploaded" class="row">
+        <h4>My content:</h4>
+        <div class="container-thumbnail col-xs-6 col-sm-4 col-lg-3" ng-repeat="item in userItems">
+            <!-- Image -->
+            <a ng-if="item.type == 'image' " ng-href="#/detail/{{item.fileId}}">
+                <div class="thumbnail-img" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');">
+                    <img src="images/transp.png" />
+                </div>
+            </a>
+            <!-- Audio -->
+            <a ng-if="item.type == 'audio' " ng-href="#/detail/{{item.fileId}}">
+                <div class="thumbnail-audio">
+                    <img src="images/note_green.png" />
+                </div>
+            </a>
+            <!-- Video -->
+            <a ng-if="item.type == 'video' " ng-href="#/detail/{{ item.fileId }}">
+                <div class="thumbnail-video" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');">
+                    <img src="images/transp_video.png" />
+                </div>
+            </a>
+            <!-- Media title -->
+            <div class="thumbnail-info">
+                <h3>{{ item.title }}</h3>
+                <i class="fa fa-heart-o"></i>
+            </div>
+
+        </div>
+    </div>
+</main>

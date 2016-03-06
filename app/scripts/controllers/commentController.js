@@ -35,10 +35,12 @@ angular.module('scopeApp')
             if (!$scope.liked) {
                 AjaxFactory.likeItem($stateParams.fileId, $localStorage.userId)
                     .then(function (success) {
-                        console.log(success.data);
+                        $scope.liked = true;
+                        console.log("liking item" + success.data);
                         $location.url($location.path());
+                        var elem = document.getElementById("like-button");
+                        elem.innerHTML = "Unlike";
 
-                        $window.location.reload();
                     }, function (error) {
                         console.log(error);
                     });
@@ -46,9 +48,12 @@ angular.module('scopeApp')
             } else {
                 AjaxFactory.unlikeItem($stateParams.fileId, $localStorage.userId)
                     .then(function (success) {
-                        console.log(success.data);
+                        $scope.liked = false;
+                        console.log("unliking item" + success.data);
                         $location.url($location.path());
-                        $window.location.reload();
+                        var elem = document.getElementById("like-button");
+                        elem.innerHTML = "Like";
+                        
                     }, function (error) {
                         console.log(error);
                     });
@@ -57,14 +62,21 @@ angular.module('scopeApp')
 
         AjaxFactory.getLikesByUser($localStorage.userId)
             .then(function (success) {
+                console.log("getLikesByUser");
                 var likedItems = success.data;
-                for (var item in $scope.likedItems) {
+                for (var item in likedItems) {
                     console.log("liked: " + likedItems[item].fileId);
                     console.log($stateParams.fileId);
                     if ($stateParams.fileId == likedItems[item].fileId) {
                         $scope.liked = true;
                         console.log($scope.liked);
+                        var elem = document.getElementById("like-button");
+                        elem.innerHTML = "Unlike";
                     }
+                }
+                if (!$scope.liked){
+                    var elem = document.getElementById("like-button");
+                        elem.innerHTML = "Like";
                 }
             }, function (error) {
                 console.log(error.data);
