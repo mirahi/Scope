@@ -14,7 +14,7 @@
             <a ng-href="#/profile/">
                 <h4>{{ comment.username }}</h4>
             </a>
-                <p>{{ comment.comment }}</p>
+            <p>{{ comment.comment }}</p>
         </div>
 
 
@@ -29,20 +29,51 @@
             <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-hide="liked">Like</button>
             <button id="like-button" ng-click="likeItem()" ng-controller="CommentController" ng-show="liked">Unlike</button>
         </form>
-        
+
 
 
     </div>
     <a href="http://util.mw.metropolia.fi/uploads/{{path}}" download>download</a>
 
     <h4>Share</h4>
-    <!-- AddToAny BEGIN -->
-<div class="a2a_kit a2a_kit_size_32 a2a_default_style">
-<a class="a2a_dd" href="https://www.addtoany.com/share"></a>
-<a class="a2a_button_facebook"></a>
-<a class="a2a_button_twitter"></a>
-<a class="a2a_button_google_plus"></a>
+    <!-- Twitter -->
+        <script language="javascript">
+        function twitterShareCurrentPage() {
+            window.open("http://twitter.com/home?status=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+    </script>
+    <a href="javascript:twitterShareCurrentPage()" title="Share on Twitter" target="_blank" class="btn btn-twitter"><i class="fa fa-twitter"></i> Twitter</a>
+    <!-- Facebook -->
+    <script language="javascript">
+        function fbShareCurrentPage() {
+            window.open("https://www.facebook.com/sharer/sharer.php?u=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+    </script>
+    <a href="javascript:fbShareCurrentPage()" title="Share on Facebook" target="_blank" class="btn btn-facebook"><i class="fa fa-facebook"></i> Facebook</a>
+    <!-- Google+ -->
+            <script language="javascript">
+        function googleShareCurrentPage() {
+            window.open("https://plus.google.com/share?url=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+    </script>
+    <a href="javascript:googleShareCurrentPage()" title="Share on Google+" target="_blank" class="btn btn-googleplus"><i class="fa fa-google-plus"></i> Google+</a>
+    <!-- StumbleUpon -->
+                <script language="javascript">
+        function stumbleUponShareCurrentPage() {
+            window.open("http://www.stumbleupon.com/submit?url=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+    </script>
+    <a href="javascript:stumbleUponShareCurrentPage()" title="Share on StumbleUpon" target="_blank" data-placement="top" class="btn btn-stumbleupon"><i class="fa fa-stumbleupon"></i> Stumbleupon</a>
+    <!-- LinkedIn -->
+                    <script language="javascript">
+        function linkedinShareCurrentPage() {
+            window.open("http://www.linkedin.com/shareArticle?mini=true&url=&title=&summary=" + escape(window.location.href) + "&t=" + document.title, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');
+            return false;
+        }
+    </script>
+    <a href="javascript:linkedinShareCurrentPage()" title="Share on LinkedIn" target="_blank" class="btn btn-linkedin"><i class="fa fa-linkedin"></i> LinkedIn</a>
 </div>
-<script async src="https://static.addtoany.com/menu/page.js"></script>
-<!-- AddToAny END -->
-    </div>

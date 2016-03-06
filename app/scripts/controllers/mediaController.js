@@ -3,6 +3,14 @@
 angular.module('scopeApp')
     .controller('MediaController', function ($scope, AjaxFactory) {
 
+        $scope.loadMore = function () {
+            console.log("loadMore");
+            var last = $scope.images[$scope.images.length - 1];
+            for (var i = 1; i <= 8; i++) {
+                $scope.images.push(last + i);
+            }
+        };
+
         $scope.getImages = function () {
             AjaxFactory.getFiles('image')
                 .then(function (success) {
@@ -41,7 +49,7 @@ angular.module('scopeApp')
                     console.lg(error.data);
 
                 });
-        }
+        };
 
         $scope.getImages();
         $scope.getVideos();

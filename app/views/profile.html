@@ -9,15 +9,16 @@
                     <figcaption class="caption">
             </figure>
         </div>
-    
-    <div id="uploaded" >
+
+        <div id="uploaded">
             <h4>My content:</h4>
-                <div ng-repeat="item in userItems">
-            <figure class="thumbnail-img">
-                <a ng-href="#/detail/{{item.fileId}}">
-                    <div class="container-image" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');"></div>
-                    <figcaption class="caption">
-            </figure>
-        </div>
+            <div ng-repeat="item in userItems">
+                <figure class="thumbnail-img">
+                    <a ng-href="#/detail/{{item.fileId}}">
+                        <div class="container-image" ng-attr-style="background-image: url('{{ item.thumbNails.medium | trustUrl }}');"></div>
+                        <figcaption class="caption">
+                </figure>
             </div>
-  </div>
+        </div>
+    </div>
+</div>
